@@ -93,7 +93,7 @@ class TopicPage extends StatelessWidget {
                     if (cases.isNotEmpty) _TestMe(cases: cases),
                   ],
                 ),
-                const StatusBarScrim(),
+                const StatusBarScrim(coversBackButton: true),
                 const _BackButton(),
               ],
             );

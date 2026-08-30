@@ -96,7 +96,7 @@ class ProfilePage extends StatelessWidget {
                     _SignOutButton(),
                   ],
                 ),
-                const StatusBarScrim(),
+                const StatusBarScrim(coversBackButton: true),
                 const _BackButton(),
               ],
             );

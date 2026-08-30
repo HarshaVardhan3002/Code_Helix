@@ -116,26 +116,54 @@ class _Stage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final viewport = MediaQuery.sizeOf(context).height;
-    // Never less than this much image, whatever the panel does. Below roughly
-    // this, the image stops reading as the subject and becomes a header.
-    final imageHeadroom = math.max(
-      viewport * 0.42,
-      ShellMetrics.topInset(context) + 150,
-    );
+    final topInset = ShellMetrics.topInset(context);
+    // Never less than this much bare image, whatever the panel does. Below
+    // roughly this, the image stops reading as the subject and becomes a
+    // header.
+    final headroom = math.max(viewport * 0.40, topInset + 150);
+    // The frame is a fixed hero, not a fill. A stack that grows with the panel
+    // is 2000 px tall on a phone, and filling that from a square source makes
+    // BoxFit.cover upscale it by half and crop away two thirds of its width —
+    // the finding ends up outside the frame and what is left is soft. Bounding
+    // the image means it is always downscaled, and always the same crop.
+    final imageHeight = math.max(viewport * 0.56, topInset + 260);
 
     return Stack(
       children: [
-        Positioned.fill(child: CaseImage(dailyCase: dailyCase)),
+        // Floor under the stack. A Stack takes its size from its
+        // non-positioned children only, so without this it collapsed to the
+        // height of the panel column and hard-clipped the frame partway down
+        // — a straight line across the screen where the photograph stopped.
+        SizedBox(height: imageHeight, width: double.infinity),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          height: imageHeight,
+          child: CaseImage(dailyCase: dailyCase),
+        ),
+        // What the lower half of the panel refracts. Glass over nothing
+        // renders as nothing, so the ground has to continue past the frame.
+        Positioned(
+          top: imageHeight,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: ColoredBox(color: context.gi.base),
+        ),
         Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: imageHeadroom),
+            SizedBox(height: headroom),
             Padding(
-              padding: EdgeInsets.fromLTRB(
+              // Not the nav inset: the last sliver already leaves that, and
+              // paying it twice opened a screen-third of dead space between
+              // the panel and the archive.
+              padding: const EdgeInsets.fromLTRB(
                 AppSpacing.md,
                 0,
                 AppSpacing.md,
-                ShellMetrics.bottomInset(context),
+                AppSpacing.lg,
               ),
               child: CaseQuestionPanel(dailyCase: dailyCase),
             ),

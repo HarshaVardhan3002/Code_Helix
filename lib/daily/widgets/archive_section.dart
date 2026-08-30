@@ -173,13 +173,12 @@ class _Thumb extends StatelessWidget {
         child: Image.asset(
           dailyCase.imageAsset,
           fit: BoxFit.cover,
-          errorBuilder: (context, _, _) => const DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Color(0xFF162934), Color(0xFF080F14)],
-              ),
+          errorBuilder: (context, _, _) => DecoratedBox(
+            decoration: BoxDecoration(color: context.gi.fillStrong),
+            child: Icon(
+              Icons.image_outlined,
+              size: 18,
+              color: context.gi.textSecondary,
             ),
           ),
         ),

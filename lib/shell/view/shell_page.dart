@@ -185,6 +185,10 @@ class _ShellNavBar extends StatelessWidget {
           ),
           child: GlassSurface(
             level: GlassLevel.rail,
+            // Dimmed: the rail sits over scrolling thumbnails, and an
+            // undimmed one magnifies whichever image is behind it into a
+            // saturated smear across the labels.
+            dimmed: true,
             padding: const EdgeInsets.symmetric(
               horizontal: AppSpacing.sm,
               vertical: AppSpacing.xs,

@@ -28,22 +28,11 @@ class SignInPage extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           // Glass takes its appearance from what is behind it, so a flat
-          // background would render the cards as nothing at all. The gradient
-          // is what the surfaces refract.
-          const DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: RadialGradient(
-                center: Alignment(-0.5, -0.7),
-                radius: 1.3,
-                colors: [
-                  Color(0xFF15242E),
-                  Color(0xFF080F14),
-                  Color(0xFF000000),
-                ],
-                stops: [0, 0.5, 1],
-              ),
-            ),
-          ),
+          // background would render the cards as nothing at all. This is the
+          // same gradient the other surfaces refract, and it has to follow the
+          // scheme: light glass over a hardcoded dark ground puts near-black
+          // type on a near-black page.
+          const SurfaceBackground(child: SizedBox.expand()),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),

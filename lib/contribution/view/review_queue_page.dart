@@ -67,7 +67,7 @@ class ReviewQueuePage extends StatelessWidget {
                       ],
                   ],
                 ),
-                const StatusBarScrim(),
+                const StatusBarScrim(coversBackButton: true),
                 const _BackButton(),
               ],
             );
@@ -234,9 +234,7 @@ class _DecisionButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: outlined
-              ? AppColors.transparent
-              : context.gi.textPrimary,
+          color: outlined ? AppColors.transparent : context.gi.action,
           borderRadius: BorderRadius.circular(AppSpacing.lg),
           border: Border.all(
             color: outlined ? context.gi.hairline : AppColors.transparent,
@@ -245,7 +243,9 @@ class _DecisionButton extends StatelessWidget {
         child: Text(
           label,
           style: context.titleSmall?.copyWith(
-            color: outlined ? context.gi.textPrimary : context.gi.base,
+            color: outlined
+                ? context.gi.textPrimary
+                : Theme.of(context).colorScheme.onPrimary,
             fontWeight: AppFontWeight.semiBold,
           ),
         ),

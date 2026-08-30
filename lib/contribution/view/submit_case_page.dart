@@ -67,8 +67,11 @@ class _SubmitCasePageState extends State<SubmitCasePage> {
   /// demonstrated is submit → screen → approve → appear, not touch typing.
   void _fillExample(Catalog catalog) {
     setState(() {
+      // The region chip on the submission comes from the image, so this id
+      // has to name a frame whose region matches the draft below. Falling
+      // through to images.first silently mislabels the case.
       _image = catalog.images.firstWhere(
-        (image) => image.id == 'img-terminales-ileum',
+        (image) => image.id == 'img-kolon-uebersicht',
         orElse: () => catalog.images.first,
       );
       _topic = catalog.topicById('morbus-crohn-befall') ?? catalog.topics.first;
@@ -77,7 +80,7 @@ class _SubmitCasePageState extends State<SubmitCasePage> {
       _question.text =
           'Welcher Befund spricht hier gegen eine Colitis ulcerosa?';
       _revealTitle.text =
-          'Aphthoide Läsionen im terminalen Ileum bei ausgespartem Rektum';
+          'Diskontinuierlicher Befall bei ausgespartem Rektum';
       _explanation.text =
           'Ileokoloskopie bei rechtsseitigen Unterbauchschmerzen und '
           'Gewichtsverlust. Im terminalen Ileum aphthoide Läsionen und '
@@ -285,7 +288,7 @@ class _SubmitCasePageState extends State<SubmitCasePage> {
                     ),
                   ],
                 ),
-                const StatusBarScrim(),
+                const StatusBarScrim(coversBackButton: true),
                 const _BackButton(),
               ],
             );
@@ -443,9 +446,9 @@ class _ImagePicker extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: context.labelSmall?.copyWith(
-                          color: context.gi.textPrimary.withValues(
-                            alpha: active ? 0.9 : 0.5,
-                          ),
+                          color: active
+                              ? context.gi.textPrimary
+                              : context.gi.textSecondary,
                           height: 1.3,
                         ),
                       ),

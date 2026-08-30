@@ -65,9 +65,13 @@ class _LegibilityScrim extends StatelessWidget {
   Widget build(BuildContext context) {
     final scrim = context.gi.mediaScrim;
     final dark = Theme.of(context).brightness == Brightness.dark;
+    // The last stop is fully opaque on purpose. The frame is a bounded hero
+    // with the page ground directly under its bottom edge, and anything short
+    // of opaque leaves a hard horizontal seam across the screen where the
+    // photograph stops.
     final steps = dark
-        ? const [0.50, 0.10, 0.35, 0.82]
-        : const [0.62, 0.22, 0.48, 0.90];
+        ? const [0.50, 0.10, 0.35, 1.0]
+        : const [0.55, 0.12, 0.34, 1.0];
 
     return IgnorePointer(
       child: DecoratedBox(

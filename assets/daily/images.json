@@ -4,7 +4,7 @@
     {
       "id": "img-oesophagus-distal",
       "asset": "assets/daily/images/lib_oesophagus_distal.jpg",
-      "label": "Distaler Ösophagus, Übersicht",
+      "label": "Ösophagus, distal",
       "region": "oesophagus",
       "credit": {
         "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
@@ -14,7 +14,7 @@
     {
       "id": "img-oesophagus-uebergang",
       "asset": "assets/daily/images/lib_oesophagus_uebergang.jpg",
-      "label": "Ösophagogastraler Übergang",
+      "label": "Übergang, Nahfokus",
       "region": "oesophagus",
       "credit": {
         "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
@@ -74,7 +74,7 @@
     {
       "id": "img-kolon-nach-injektion",
       "asset": "assets/daily/images/lib_kolon_resektionsrand.jpg",
-      "label": "Kolon nach submuköser Injektion",
+      "label": "Kolon, nach Injektion",
       "region": "kolon",
       "credit": {
         "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",

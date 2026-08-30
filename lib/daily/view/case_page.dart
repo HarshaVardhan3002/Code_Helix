@@ -47,26 +47,7 @@ class CasePage extends StatelessWidget {
             CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
-                  child: Stack(
-                    children: [
-                      Positioned.fill(child: CaseImage(dailyCase: dailyCase)),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(
-                            height: math.max(
-                              MediaQuery.sizeOf(context).height * 0.42,
-                              ShellMetrics.topInset(context) + 150,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(AppSpacing.md),
-                            child: CaseQuestionPanel(dailyCase: dailyCase),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  child: _Stage(dailyCase: dailyCase),
                 ),
                 SliverToBoxAdapter(
                   child: CaseReveal(
@@ -82,6 +63,57 @@ class CasePage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// The same hero shape as Heute: a bounded frame, the panel overlapping its
+/// lower edge, and the page ground continuing behind the rest of the panel.
+/// See `HeutePage` for why the image is not a fill.
+class _Stage extends StatelessWidget {
+  const _Stage({required this.dailyCase});
+
+  final DailyCase dailyCase;
+
+  @override
+  Widget build(BuildContext context) {
+    final viewport = MediaQuery.sizeOf(context).height;
+    final topInset = ShellMetrics.topInset(context);
+    final headroom = math.max(viewport * 0.40, topInset + 150);
+    final imageHeight = math.max(viewport * 0.56, topInset + 260);
+
+    return Stack(
+      children: [
+        // Floor under the stack. A Stack takes its size from its
+        // non-positioned children only, so without this it collapsed to the
+        // height of the panel column and hard-clipped the frame partway down
+        // — a straight line across the screen where the photograph stopped.
+        SizedBox(height: imageHeight, width: double.infinity),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          height: imageHeight,
+          child: CaseImage(dailyCase: dailyCase),
+        ),
+        Positioned(
+          top: imageHeight,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: ColoredBox(color: context.gi.base),
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(height: headroom),
+            Padding(
+              padding: const EdgeInsets.all(AppSpacing.md),
+              child: CaseQuestionPanel(dailyCase: dailyCase),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

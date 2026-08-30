@@ -16,7 +16,19 @@ import 'package:flutter/services.dart';
 /// {@endtemplate}
 class StatusBarScrim extends StatelessWidget {
   /// {@macro status_bar_scrim}
-  const StatusBarScrim({super.key});
+  const StatusBarScrim({this.coversBackButton = false, super.key});
+
+  /// Whether the scrim also has to cover a floating back chip.
+  ///
+  /// The shell's top bar is glass and spans the width, so content scrolling
+  /// behind it reads as intended. A pushed page has only a small round chip,
+  /// and a heading sliding under it just looks broken. Those pages set this;
+  /// pages with a full-bleed frame behind the chip leave it off, because a
+  /// solid band across the top of the photograph costs more than it buys.
+  final bool coversBackButton;
+
+  /// Height of the floating back chip plus the padding around it.
+  static const double _backButtonRow = 38 + AppSpacing.md * 2;
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +44,22 @@ class StatusBarScrim extends StatelessWidget {
         child: AnnotatedRegion<SystemUiOverlayStyle>(
           value: GiTheme.overlayFor(Theme.of(context).brightness),
           child: Container(
-            height: MediaQuery.viewPaddingOf(context).top + AppSpacing.sm,
+            // Reaches exactly the top edge of the floating bar and is solid
+            // for most of that. Content is meant to scroll *behind* the glass
+            // bar; what it must not do is reappear in the gap above it, which
+            // is what a scrim sized to the status bar alone allowed.
+            height:
+                MediaQuery.viewPaddingOf(context).top +
+                AppSpacing.md +
+                (coversBackButton ? _backButtonRow : 0),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [scrim, scrim.withValues(alpha: 0)],
-                stops: const [0.55, 1],
+                colors: [scrim, scrim, scrim.withValues(alpha: 0)],
+                stops: coversBackButton
+                    ? const [0, 0.78, 1]
+                    : const [0, 0.66, 1],
               ),
             ),
           ),
