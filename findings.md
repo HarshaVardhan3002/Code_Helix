@@ -364,3 +364,118 @@ four-step route a submission takes (einreichen → Vorprüfung → ärztliche Fr
   the abstract placeholder. Deliberately abstract — a plausible fake frame under
   a real AWMF number is the exact failure the citation rules exist to prevent.
 - Target-user assumption unconfirmed with the physicians.
+
+---
+
+## v3 — real imagery, two schemes, branding (2026-08-30)
+
+### Kvasir v2 as the image source
+
+`src/GI_dataset/kvasir-dataset-v2/` — 8000 frames, 8 classes of 1000
+(dyed-lifted-polyps, dyed-resection-margins, esophagitis, normal-cecum,
+normal-pylorus, normal-z-line, polyps, ulcerative-colitis). Simula Research
+Laboratory / Vestre Viken HF.
+
+**Licence: research and education only.** Commercial use needs prior written
+permission. Not CC BY — that is Hyper-Kvasir and Kvasir-Capsule, which are
+different datasets. Every case and library entry carries the credit and the
+restriction. If this product is ever commercialised the imagery has to be
+relicensed or replaced; nothing else in the app depends on it.
+
+**The frames are not clean.** Two burned-in artefacts have to be screened for:
+
+- a teal ROI/position box, roughly `g>90 && b>80 && r<70`, present in most of
+  `dyed-*` and `normal-cecum` and about half of `polyps`
+- a scope metadata panel (patient/date/scope text) down the left edge, mostly on
+  the 1280x1024 and 1920x1072 frames
+
+Selection pipeline (`$CLAUDE_JOB_DIR/tmp/export.py`, reproducible): reject any
+frame with teal pixels, find the endoscopic aperture as the bounding box of
+`luminance > 45` columns/rows with fill fraction `> 0.4`, reject on aspect and
+brightness, rank by a blur metric, then centre-crop to 76 % and resize to 1400
+square. The 76 % crop is what removes the last edge annotations. `SOURCES.json`
+in the assets folder records the source file behind each shipped asset.
+
+**Class-to-case is the binding constraint.** Kvasir labels by class, not by
+grade. So no case may ask the reader to grade its own frame — each asks what
+*determines* the grade, which the class does support. Cases with no matching
+class (Forrest IIa, oesophageal varices, coeliac scalloping) keep their
+placeholder path rather than borrowing an unrelated frame; drop a licensed file
+at the named path and it appears with no code change.
+
+`src/random_images/` (12 files) are multi-panel figure grids from publications
+with no attributable provenance. Unused, deliberately.
+
+### Theme
+
+`GiColors` is a `ThemeExtension` with both schemes and a `context.gi` accessor.
+It replaced 198 `AppColors.white.withValues(alpha: …)` call sites — that pattern
+is *why* the first build was dark-only, since a hardcoded white cannot become a
+near-black when the scheme flips. Alpha on white was standing in for a role, so
+the migration mapped by value: `>= 0.70` primary text, `>= 0.30` secondary,
+`>= 0.10` hairline, below that fill.
+
+Tokens split by what is *behind* them, not by where they are used: surface
+tokens for chrome on the app's own ground, media tokens for anything over an
+endoscopy frame. Both flip. A half-light mode that keeps a black scrim under
+white glass reads as a bug, not as a theme.
+
+**Glass has to take a `Brightness`.** Dark glass is a smoked panel lit from
+above; light glass is a frosted white one. Not the same surface with different
+text: the tint inverts, the rim goes from a white highlight to a grey shadow
+line, and `lightIntensity` drops to about a third, because the specular streak
+that gives a smoked panel its edge becomes a blown-out patch on a white one.
+Light tints also run heavier — a dark panel only needs to be slightly darker
+than the frame to hold light text, while near-black text on a white panel needs
+the frame genuinely veiled first.
+
+### Fonts
+
+Newsreader for the wordmark, the clinical question and quoted guideline text.
+Fira Sans for everything else. The restriction is the point; a serif used
+anywhere else turns into decoration.
+
+Google Fonts ships **Newsreader only as a variable font**, and declaring
+`weight:` in pubspec for a variable TTF does not instance it — every weight
+renders at the default. Rather than thread `fontVariations` through the theme,
+four static faces are cut with `fontTools.varLib.instancer` with `opsz` pinned
+per weight (`$CLAUDE_JOB_DIR/tmp/instance_newsreader.py`). Note
+`updateFontNames=True` fails on this font for `opsz` values absent from its STAT
+table; pass `False`, since the family name comes from pubspec anyway.
+`TopicSection` gained an optional `quote` field so guideline wording is stored
+apart from the app's own prose.
+
+### Layout rules learned on device
+
+- **A `Stack` sizes itself to its non-positioned children only.** A `Positioned`
+  frame is then hard-clipped at that height. Both case stages need an explicit
+  sized floor or the photograph ends in a straight line across the screen.
+- **Never put a hero frame in `Positioned.fill` of a stack that grows.** With a
+  tall question panel the stack is ~2100 px on a phone, so `BoxFit.cover`
+  upscales a 1400 px square by half and crops away two thirds of its width. The
+  finding ends up outside the frame and what is left is soft. Bound the frame,
+  paint the page ground beneath it, and let the panel overlap the join.
+- A legibility scrim over a bounded frame must reach **full opacity** at the
+  frame's lower edge, or the join is visible.
+- The floating bars are glass and content is meant to scroll *behind* them. What
+  it must not do is reappear in the gap between the status bar and the bar, so
+  the scrim is sized to the bar's top edge. Pushed pages have only a small back
+  chip and need the scrim extended behind it.
+- Don't pay `ShellMetrics.bottomInset` twice: the last sliver already leaves it.
+- A glass rail over scrolling thumbnails magnifies whatever is behind it into a
+  saturated smear across its labels. `dimmed: true`.
+
+### Branding
+
+The `development` and `staging` flavours shipped their own launcher resources —
+a unicorn with a DEV banner — which override everything in `main/res`. Deleted;
+otherwise no amount of work on the main icon shows up. The adaptive icon must
+point at `@mipmap/ic_launcher_foreground` (density PNGs), not the template's
+`@drawable` vector, or the two disagree. `appName` is `GI Daily` on all three
+flavours.
+
+### Still open
+
+- The three cases with no matching Kvasir class still render the placeholder.
+- Kvasir's licence blocks commercial use; relicensing is a business decision.
+- Target-user assumption still unconfirmed with the physicians.
