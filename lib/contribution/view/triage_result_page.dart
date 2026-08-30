@@ -22,7 +22,7 @@ class TriageResultPage extends StatelessWidget {
     final report = submission.triage;
 
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: context.gi.base,
       body: SurfaceBackground(
         child: ListView(
           padding: EdgeInsets.fromLTRB(
@@ -32,16 +32,16 @@ class TriageResultPage extends StatelessWidget {
             AppSpacing.xxlg,
           ),
           children: [
-            const Icon(
+            Icon(
               Icons.check_circle_outline_rounded,
               size: 34,
-              color: Color(0xFF56B48C),
+              color: context.gi.correct,
             ),
             const SizedBox(height: AppSpacing.md),
             Text(
               'Eingereicht',
               style: context.headlineSmall?.copyWith(
-                color: AppColors.white,
+                color: context.gi.textPrimary,
                 fontWeight: AppFontWeight.semiBold,
                 letterSpacing: -0.4,
               ),
@@ -51,7 +51,7 @@ class TriageResultPage extends StatelessWidget {
               'Der Fall liegt jetzt bei der Redaktion. '
               'Bis zur Freigabe sieht ihn kein Leser.',
               style: context.bodyMedium?.copyWith(
-                color: AppColors.white.withValues(alpha: 0.6),
+                color: context.gi.textSecondary,
                 height: 1.45,
               ),
             ),
@@ -68,13 +68,13 @@ class TriageResultPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(AppSpacing.lg),
                   border: Border.all(
-                    color: AppColors.white.withValues(alpha: 0.25),
+                    color: context.gi.hairline,
                   ),
                 ),
                 child: Text(
                   'Fertig',
                   style: context.titleSmall?.copyWith(
-                    color: AppColors.white,
+                    color: context.gi.textPrimary,
                     fontWeight: AppFontWeight.semiBold,
                   ),
                 ),
@@ -97,22 +97,22 @@ class _StatusRow extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.05),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.md),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Row(
         children: [
           Icon(
             Icons.schedule_rounded,
             size: 17,
-            color: AppColors.white.withValues(alpha: 0.6),
+            color: context.gi.textSecondary,
           ),
           const SizedBox(width: AppSpacing.md),
           Text(
             'Status: ${status.label}',
             style: context.bodyMedium?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.88),
+              color: context.gi.textPrimary,
             ),
           ),
         ],

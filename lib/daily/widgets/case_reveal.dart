@@ -59,7 +59,7 @@ class CaseReveal extends StatelessWidget {
               Text(
                 dailyCase.revealTitle,
                 style: context.titleLarge?.copyWith(
-                  color: AppColors.white,
+                  color: context.gi.textPrimary,
                   height: 1.22,
                   fontWeight: AppFontWeight.semiBold,
                   letterSpacing: -0.2,
@@ -70,7 +70,7 @@ class CaseReveal extends StatelessWidget {
                 Text(
                   paragraph,
                   style: context.bodyMedium?.copyWith(
-                    color: AppColors.white.withValues(alpha: 0.86),
+                    color: context.gi.textPrimary,
                     height: 1.54,
                   ),
                 ),
@@ -98,7 +98,7 @@ class CaseReveal extends StatelessWidget {
               Text(
                 'Bild: ${dailyCase.imageCredit.label}',
                 style: context.labelSmall?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.4),
+                  color: context.gi.textSecondary,
                 ),
               ),
               if (dailyCase.contributedBy != null) ...[
@@ -106,7 +106,7 @@ class CaseReveal extends StatelessWidget {
                 Text(
                   'Fall eingereicht von ${dailyCase.contributedBy}',
                   style: context.labelSmall?.copyWith(
-                    color: AppColors.white.withValues(alpha: 0.4),
+                    color: context.gi.textSecondary,
                   ),
                 ),
               ],
@@ -138,7 +138,7 @@ class _SectionLabel extends StatelessWidget {
     return Text(
       label.toUpperCase(),
       style: context.labelSmall?.copyWith(
-        color: AppColors.white.withValues(alpha: 0.45),
+        color: context.gi.textSecondary,
         letterSpacing: 1.5,
         fontSize: 9.5,
         fontWeight: AppFontWeight.semiBold,
@@ -158,9 +158,9 @@ class _Takeaway extends StatelessWidget {
       width: double.infinity,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.05),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.lg),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: IntrinsicHeight(
         child: Row(
@@ -169,9 +169,9 @@ class _Takeaway extends StatelessWidget {
             // A sibling bar, not a thicker left BorderSide: Flutter refuses to
             // paint a non-uniform Border together with a borderRadius, and a
             // container that fails to paint takes its text with it.
-            const SizedBox(
+            SizedBox(
               width: 2.5,
-              child: ColoredBox(color: Color(0x66FFFFFF)),
+              child: ColoredBox(color: context.gi.action),
             ),
             Expanded(
               child: Padding(
@@ -179,7 +179,7 @@ class _Takeaway extends StatelessWidget {
                 child: Text(
                   text,
                   style: context.bodyMedium?.copyWith(
-                    color: AppColors.white.withValues(alpha: 0.94),
+                    color: context.gi.textPrimary,
                     height: 1.46,
                     fontWeight: AppFontWeight.medium,
                   ),
@@ -210,28 +210,28 @@ class _TopicLink extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(AppSpacing.lg),
-          border: Border.all(color: AppColors.white.withValues(alpha: 0.18)),
+          border: Border.all(color: context.gi.hairline),
         ),
         child: Row(
           children: [
             Icon(
               Icons.menu_book_outlined,
               size: 17,
-              color: AppColors.white.withValues(alpha: 0.75),
+              color: context.gi.textPrimary,
             ),
             const SizedBox(width: AppSpacing.md),
             Expanded(
               child: Text(
                 'Zum Thema in der Bibliothek',
                 style: context.bodyMedium?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.88),
+                  color: context.gi.textPrimary,
                 ),
               ),
             ),
             Icon(
               Icons.arrow_forward_rounded,
               size: 16,
-              color: AppColors.white.withValues(alpha: 0.5),
+              color: context.gi.textSecondary,
             ),
           ],
         ),
@@ -253,12 +253,12 @@ class _ClosingLine extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(height: 1, color: AppColors.white.withValues(alpha: 0.1)),
+        Container(height: 1, color: context.gi.hairline),
         const SizedBox(height: AppSpacing.lg),
         Text(
           'Das war’s für heute.',
           style: context.titleSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.9),
+            color: context.gi.textPrimary,
             fontWeight: AppFontWeight.semiBold,
           ),
         ),
@@ -266,7 +266,7 @@ class _ClosingLine extends StatelessWidget {
         Text(
           'Morgen gibt’s einen neuen Fall.',
           style: context.bodyMedium?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.55),
+            color: context.gi.textSecondary,
           ),
         ),
       ],

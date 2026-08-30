@@ -2,7 +2,6 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram_offline_first_clone/catalog/catalog.dart';
-import 'package:flutter_instagram_offline_first_clone/daily/widgets/quiz_option_tile.dart';
 import 'package:flutter_instagram_offline_first_clone/progress/progress.dart';
 
 /// The German label for a case's position in the feed.
@@ -60,7 +59,7 @@ class ArchiveSection extends StatelessWidget {
           Text(
             title.toUpperCase(),
             style: context.labelSmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.45),
+              color: context.gi.textSecondary,
               letterSpacing: 1.5,
               fontSize: 9.5,
               fontWeight: AppFontWeight.semiBold,
@@ -108,9 +107,9 @@ class _ArchiveRow extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(AppSpacing.sm),
         decoration: BoxDecoration(
-          color: AppColors.white.withValues(alpha: 0.04),
+          color: context.gi.fill,
           borderRadius: BorderRadius.circular(AppSpacing.lg),
-          border: Border.all(color: AppColors.white.withValues(alpha: 0.1)),
+          border: Border.all(color: context.gi.hairline),
         ),
         child: Row(
           children: [
@@ -123,7 +122,7 @@ class _ArchiveRow extends StatelessWidget {
                   Text(
                     dayLabel,
                     style: context.labelSmall?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.5),
+                      color: context.gi.textSecondary,
                       letterSpacing: 0.3,
                     ),
                   ),
@@ -138,7 +137,7 @@ class _ArchiveRow extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: context.bodySmall?.copyWith(
-                      color: AppColors.white.withValues(
+                      color: context.gi.textPrimary.withValues(
                         alpha: answered ? 0.88 : 0.7,
                       ),
                       height: 1.35,
@@ -179,7 +178,7 @@ class _Thumb extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [Color(0xFF31262A), Color(0xFF11151B)],
+                colors: [Color(0xFF162934), Color(0xFF080F14)],
               ),
             ),
           ),
@@ -201,11 +200,11 @@ class _StatusDot extends StatelessWidget {
       return Icon(
         Icons.chevron_right_rounded,
         size: 18,
-        color: AppColors.white.withValues(alpha: 0.35),
+        color: context.gi.textSecondary,
       );
     }
 
-    final accent = correct ? kVerdictCorrect : kVerdictIncorrect;
+    final accent = correct ? context.gi.correct : context.gi.incorrect;
     return Padding(
       padding: const EdgeInsets.only(right: AppSpacing.xs),
       child: Icon(

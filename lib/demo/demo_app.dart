@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram_offline_first_clone/catalog/catalog.dart';
 import 'package:flutter_instagram_offline_first_clone/progress/progress.dart';
 import 'package:flutter_instagram_offline_first_clone/session/session.dart';
+import 'package:flutter_instagram_offline_first_clone/settings/settings.dart';
 import 'package:flutter_instagram_offline_first_clone/shell/shell.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -38,17 +39,23 @@ class DemoApp extends StatelessWidget {
           ),
           BlocProvider(create: (_) => SessionCubit()),
           BlocProvider(create: (_) => ProgressCubit()),
+          BlocProvider(create: (_) => AppearanceCubit()),
         ],
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'GI Daily',
-          // Dark only. The product is an image-first reader that lives on top
-          // of endoscopy frames; light chrome would fight every image in it.
-          theme: const AppDarkTheme().theme,
-          locale: const Locale('de'),
-          localizationsDelegates: GlobalMaterialLocalizations.delegates,
-          supportedLocales: const [Locale('de'), Locale('en')],
-          home: const _Root(),
+        child: BlocBuilder<AppearanceCubit, ThemeMode>(
+          builder: (context, mode) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'GI Daily',
+            // Both schemes, System by default. The reader decides in Profil.
+            // An endoscopy suite is a dark room and a ward round is not, so
+            // hardcoding either one is a guess about where the phone is.
+            theme: GiTheme.light,
+            darkTheme: GiTheme.dark,
+            themeMode: mode,
+            locale: const Locale('de'),
+            localizationsDelegates: GlobalMaterialLocalizations.delegates,
+            supportedLocales: const [Locale('de'), Locale('en')],
+            home: const _Root(),
+          ),
         ),
       ),
     );

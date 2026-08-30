@@ -65,13 +65,12 @@ class _Asking extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AppSpacing.md),
+        // Newsreader, not the UI sans. The question is the one line on this
+        // screen the reader has to weigh, and the serif marks it as the
+        // subject of the screen rather than a caption on the image.
         Text(
           quiz.question,
-          style: context.titleMedium?.copyWith(
-            color: AppColors.white,
-            height: 1.3,
-            fontWeight: AppFontWeight.semiBold,
-          ),
+          style: GiSerif.question.copyWith(color: context.gi.textPrimary),
         ),
         const SizedBox(height: AppSpacing.lg),
         for (final option in quiz.options) ...[
@@ -110,14 +109,14 @@ class _Evaluating extends StatelessWidget {
           height: 13,
           child: CircularProgressIndicator(
             strokeWidth: 1.4,
-            color: AppColors.white.withValues(alpha: 0.5),
+            color: context.gi.textSecondary,
           ),
         ),
         const SizedBox(width: AppSpacing.md),
         Text(
           'Antwort wird geprüft',
           style: context.bodySmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.55),
+            color: context.gi.textSecondary,
           ),
         ),
       ],
@@ -132,7 +131,7 @@ class _Answered extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final accent = correct ? kVerdictCorrect : kVerdictIncorrect;
+    final accent = correct ? context.gi.correct : context.gi.incorrect;
 
     return Row(
       children: [
@@ -153,14 +152,14 @@ class _Answered extends StatelessWidget {
         Text(
           'Auflösung unten',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.55),
+            color: context.gi.textSecondary,
           ),
         ),
         const SizedBox(width: AppSpacing.xs),
         Icon(
           Icons.keyboard_arrow_down_rounded,
           size: 16,
-          color: AppColors.white.withValues(alpha: 0.55),
+          color: context.gi.textSecondary,
         ),
       ],
     );

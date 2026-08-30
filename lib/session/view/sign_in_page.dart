@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram_offline_first_clone/session/bloc/session_cubit.dart';
 import 'package:flutter_instagram_offline_first_clone/session/models/session_user.dart';
+import 'package:flutter_instagram_offline_first_clone/shell/widgets/widgets.dart';
 
 /// {@template sign_in_page}
 /// The account list.
@@ -22,7 +23,7 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: context.gi.base,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -35,9 +36,9 @@ class SignInPage extends StatelessWidget {
                 center: Alignment(-0.5, -0.7),
                 radius: 1.3,
                 colors: [
-                  Color(0xFF3B2A2E),
-                  Color(0xFF141821),
-                  Color(0xFF07090C),
+                  Color(0xFF15242E),
+                  Color(0xFF080F14),
+                  Color(0xFF000000),
                 ],
                 stops: [0, 0.5, 1],
               ),
@@ -50,26 +51,20 @@ class SignInPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Spacer(flex: 2),
-                  const Center(
-                    child: AppLogo(
-                      width: 148,
-                      height: 42,
-                      color: AppColors.white,
-                    ),
-                  ),
+                  const Center(child: GiWordmark(size: 36)),
                   const SizedBox(height: AppSpacing.md),
                   Text(
                     'Täglich ein Fall aus den Leitlinien.',
                     textAlign: TextAlign.center,
                     style: context.bodyMedium?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.6),
+                      color: context.gi.textSecondary,
                     ),
                   ),
                   const Spacer(flex: 3),
                   Text(
                     'DEMO-ZUGÄNGE',
                     style: context.labelSmall?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.45),
+                      color: context.gi.textSecondary,
                       letterSpacing: 1.6,
                       fontSize: 10,
                       fontWeight: AppFontWeight.semiBold,
@@ -86,7 +81,7 @@ class SignInPage extends StatelessWidget {
                     'Es werden keine Daten an einen Server gesendet.',
                     textAlign: TextAlign.center,
                     style: context.labelSmall?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.35),
+                      color: context.gi.textSecondary,
                       height: 1.45,
                     ),
                   ),
@@ -127,7 +122,7 @@ class _AccountCard extends StatelessWidget {
                   Text(
                     account.name,
                     style: context.titleSmall?.copyWith(
-                      color: AppColors.white,
+                      color: context.gi.textPrimary,
                       fontWeight: AppFontWeight.semiBold,
                     ),
                   ),
@@ -135,7 +130,7 @@ class _AccountCard extends StatelessWidget {
                   Text(
                     account.affiliation,
                     style: context.labelSmall?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.55),
+                      color: context.gi.textSecondary,
                     ),
                   ),
                 ],
@@ -163,13 +158,13 @@ class _Initial extends StatelessWidget {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: AppColors.white.withValues(alpha: 0.09),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.18)),
+        color: context.gi.fill,
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Text(
         letter,
         style: context.titleSmall?.copyWith(
-          color: AppColors.white.withValues(alpha: 0.85),
+          color: context.gi.textPrimary,
           fontWeight: AppFontWeight.semiBold,
         ),
       ),
@@ -195,14 +190,14 @@ class RoleChip extends StatelessWidget {
         vertical: AppSpacing.xxs + 1,
       ),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.08),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.sm),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.16)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Text(
         role.label.toUpperCase(),
         style: context.labelSmall?.copyWith(
-          color: AppColors.white.withValues(alpha: 0.75),
+          color: context.gi.textPrimary,
           letterSpacing: 1,
           fontSize: 9.5,
           fontWeight: AppFontWeight.semiBold,

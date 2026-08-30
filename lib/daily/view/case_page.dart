@@ -38,7 +38,7 @@ class CasePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: context.gi.base,
       body: CaseScope(
         dailyCase: dailyCase,
         builder: (context) => Stack(
@@ -110,17 +110,17 @@ class _BackBar extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.arrow_back_rounded,
                     size: 18,
-                    color: AppColors.white,
+                    color: context.gi.textPrimary,
                   ),
                   if (dayLabel != null) ...[
                     const SizedBox(width: AppSpacing.sm),
                     Text(
                       dayLabel!,
                       style: context.labelMedium?.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.85),
+                        color: context.gi.textPrimary,
                       ),
                     ),
                   ],

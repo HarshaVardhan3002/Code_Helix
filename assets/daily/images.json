@@ -1,47 +1,85 @@
 {
-  "_readme": "Die Bildbibliothek, aus der Autor:innen einen Fall bauen. Es gibt bewusst KEINEN Upload: ein eigenes Endoskopiebild hochzuladen heisst Patientendaten hochzuladen, und eine Einwilligungsstrecke wird nicht improvisiert. Labels sind absichtlich neutral und nennen keine Diagnose - sonst bekommt die Autorin die Antwort auf den Fall geschenkt, den sie gerade schreibt. Alle Eintraege sind Platzhalter, bis lizenzierte Lehrsammlungsbilder in assets/daily/images/ liegen.",
+  "_readme": "Die Bildbibliothek, aus der Autor:innen einen Fall bauen. Es gibt bewusst KEINEN Upload: ein eigenes Endoskopiebild hochzuladen heisst Patientendaten hochzuladen, und eine Einwilligungsstrecke wird nicht improvisiert. Labels sind absichtlich neutral und nennen keine Diagnose - sonst bekommt die Autorin die Antwort auf den Fall geschenkt, den sie gerade schreibt. Alle Aufnahmen stammen aus dem Kvasir-v2-Datensatz (Simula Research Laboratory / Vestre Viken HF), der ausschliesslich fuer Forschung und Lehre freigegeben ist. Eine kommerzielle Nutzung erfordert eine gesonderte Genehmigung.",
   "images": [
     {
-      "id": "img-antrum-uebersicht",
-      "asset": "assets/daily/images/forrest_iia_antrumulkus.jpg",
+      "id": "img-oesophagus-distal",
+      "asset": "assets/daily/images/lib_oesophagus_distal.jpg",
+      "label": "Distaler Ösophagus, Übersicht",
+      "region": "oesophagus",
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
+    },
+    {
+      "id": "img-oesophagus-uebergang",
+      "asset": "assets/daily/images/lib_oesophagus_uebergang.jpg",
+      "label": "Ösophagogastraler Übergang",
+      "region": "oesophagus",
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
+    },
+    {
+      "id": "img-magen-antrum",
+      "asset": "assets/daily/images/lib_magen_antrum.jpg",
       "label": "Antrum, Übersicht",
       "region": "magen",
-      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
     },
     {
-      "id": "img-oesophagus-distal",
-      "asset": "assets/daily/images/oesophagusvarizen_red_colour_signs.jpg",
-      "label": "Distaler Ösophagus, Inversion",
-      "region": "oesophagus",
-      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+      "id": "img-magen-pylorus",
+      "asset": "assets/daily/images/lib_magen_pylorus.jpg",
+      "label": "Präpylorisch, Nahfokus",
+      "region": "magen",
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
     },
     {
-      "id": "img-colon-ascendens",
-      "asset": "assets/daily/images/paris_iia_colon_ascendens.jpg",
-      "label": "Colon ascendens, Nahfokus",
+      "id": "img-kolon-uebersicht",
+      "asset": "assets/daily/images/lib_kolon_uebersicht.jpg",
+      "label": "Kolon, Übersicht",
       "region": "kolon",
-      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
     },
     {
-      "id": "img-rektosigmoid",
-      "asset": "assets/daily/images/colitis_ulcerosa_mayo_3.jpg",
-      "label": "Rektosigmoid, Übersicht",
+      "id": "img-kolon-nahfokus",
+      "asset": "assets/daily/images/lib_kolon_nahfokus.jpg",
+      "label": "Kolon, Nahfokus",
       "region": "kolon",
-      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
     },
     {
-      "id": "img-duodenum-pars-descendens",
-      "asset": "assets/daily/images/duodenum_scalloping_zoeliakie.jpg",
-      "label": "Pars descendens duodeni",
-      "region": "duodenum",
-      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+      "id": "img-kolon-zoekum",
+      "asset": "assets/daily/images/lib_kolon_zoekum.jpg",
+      "label": "Zökalpol, Übersicht",
+      "region": "kolon",
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
     },
     {
-      "id": "img-terminales-ileum",
-      "asset": "assets/daily/images/terminales_ileum.jpg",
-      "label": "Terminales Ileum, Übersicht",
-      "region": "duodenum",
-      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+      "id": "img-kolon-nach-injektion",
+      "asset": "assets/daily/images/lib_kolon_resektionsrand.jpg",
+      "label": "Kolon nach submuköser Injektion",
+      "region": "kolon",
+      "credit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      }
     }
   ]
 }

@@ -2,9 +2,6 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram_offline_first_clone/catalog/catalog.dart';
 
-/// Amber, used wherever content is not yet cleared by a physician.
-const kPlaceholderAmber = Color(0xFFD79463);
-
 /// {@template citation_block}
 /// Where an answer comes from, rendered so a gap is visible as a gap.
 ///
@@ -25,7 +22,7 @@ class CitationBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final muted = AppColors.white.withValues(alpha: 0.45);
+    final muted = context.gi.textSecondary;
 
     if (dense) {
       return Text(
@@ -38,9 +35,9 @@ class CitationBlock extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.04),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.md),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.1)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +61,7 @@ class CitationBlock extends StatelessWidget {
           Text(
             citation.guideline,
             style: context.bodySmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.86),
+              color: context.gi.textPrimary,
               height: 1.4,
               fontWeight: AppFontWeight.medium,
             ),
@@ -95,14 +92,14 @@ class _OpenFieldsChip extends StatelessWidget {
         vertical: 1,
       ),
       decoration: BoxDecoration(
-        color: kPlaceholderAmber.withValues(alpha: 0.12),
+        color: context.gi.warning.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(AppSpacing.xs),
-        border: Border.all(color: kPlaceholderAmber.withValues(alpha: 0.35)),
+        border: Border.all(color: context.gi.warning.withValues(alpha: 0.35)),
       ),
       child: Text(
         'FELDER OFFEN',
         style: context.labelSmall?.copyWith(
-          color: const Color(0xFFE3B48F),
+          color: context.gi.warning,
           letterSpacing: 1,
           fontSize: 8.5,
           fontWeight: AppFontWeight.semiBold,
@@ -130,14 +127,14 @@ class UnverifiedChip extends StatelessWidget {
         vertical: AppSpacing.xxs + 1,
       ),
       decoration: BoxDecoration(
-        color: kPlaceholderAmber.withValues(alpha: 0.14),
+        color: context.gi.warning.withValues(alpha: 0.14),
         borderRadius: BorderRadius.circular(AppSpacing.sm),
-        border: Border.all(color: kPlaceholderAmber.withValues(alpha: 0.4)),
+        border: Border.all(color: context.gi.warning.withValues(alpha: 0.4)),
       ),
       child: Text(
         'PLATZHALTER',
         style: context.labelSmall?.copyWith(
-          color: const Color(0xFFE3B48F),
+          color: context.gi.warning,
           letterSpacing: 1.1,
           fontSize: 9.5,
           fontWeight: AppFontWeight.semiBold,
@@ -162,7 +159,7 @@ class MetaChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colour = accent ?? AppColors.white;
+    final colour = accent ?? context.gi.textPrimary;
 
     return Container(
       padding: const EdgeInsets.symmetric(

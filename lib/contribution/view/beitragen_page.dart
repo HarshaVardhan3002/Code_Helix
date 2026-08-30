@@ -43,7 +43,7 @@ class BeitragenPage extends StatelessWidget {
               Text(
                 'Beitragen',
                 style: context.headlineSmall?.copyWith(
-                  color: AppColors.white,
+                  color: context.gi.textPrimary,
                   fontWeight: AppFontWeight.semiBold,
                   letterSpacing: -0.4,
                 ),
@@ -53,7 +53,7 @@ class BeitragenPage extends StatelessWidget {
                 'Die Fälle kommen von den Mitgliedern. '
                 'Freigegeben wird ärztlich.',
                 style: context.bodyMedium?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.6),
+                  color: context.gi.textSecondary,
                   height: 1.45,
                 ),
               ),
@@ -97,7 +97,7 @@ class BeitragenPage extends StatelessWidget {
                   Text(
                     'MEINE EINREICHUNGEN',
                     style: context.labelSmall?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.45),
+                      color: context.gi.textSecondary,
                       letterSpacing: 1.4,
                       fontSize: 9.5,
                       fontWeight: AppFontWeight.semiBold,
@@ -151,7 +151,7 @@ class _PathNotice extends StatelessWidget {
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppSpacing.lg),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.1)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +159,7 @@ class _PathNotice extends StatelessWidget {
           Text(
             'WEG EINER EINREICHUNG',
             style: context.labelSmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.45),
+              color: context.gi.textSecondary,
               letterSpacing: 1.4,
               fontSize: 9.5,
               fontWeight: AppFontWeight.semiBold,
@@ -176,7 +176,7 @@ class _PathNotice extends StatelessWidget {
                   child: Text(
                     '${index + 1}',
                     style: context.labelMedium?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.35),
+                      color: context.gi.textSecondary,
                       fontWeight: AppFontWeight.semiBold,
                     ),
                   ),
@@ -188,7 +188,7 @@ class _PathNotice extends StatelessWidget {
                       Text(
                         step.$1,
                         style: context.bodyMedium?.copyWith(
-                          color: AppColors.white.withValues(alpha: 0.9),
+                          color: context.gi.textPrimary,
                           fontWeight: AppFontWeight.medium,
                         ),
                       ),
@@ -196,7 +196,7 @@ class _PathNotice extends StatelessWidget {
                       Text(
                         step.$2,
                         style: context.bodySmall?.copyWith(
-                          color: AppColors.white.withValues(alpha: 0.55),
+                          color: context.gi.textSecondary,
                           height: 1.4,
                         ),
                       ),
@@ -220,9 +220,9 @@ class _ReaderNotice extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.05),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.lg),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -230,13 +230,13 @@ class _ReaderNotice extends StatelessWidget {
           Icon(
             Icons.lock_outline_rounded,
             size: 20,
-            color: AppColors.white.withValues(alpha: 0.6),
+            color: context.gi.textSecondary,
           ),
           const SizedBox(height: AppSpacing.md),
           Text(
             'Einreichen ist verifizierten Ärztinnen und Ärzten vorbehalten',
             style: context.titleSmall?.copyWith(
-              color: AppColors.white,
+              color: context.gi.textPrimary,
               height: 1.3,
               fontWeight: AppFontWeight.semiBold,
             ),
@@ -248,7 +248,7 @@ class _ReaderNotice extends StatelessWidget {
             'an eine Verifizierung gebunden und die Freigabe an die '
             'Redaktion.',
             style: context.bodyMedium?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.7),
+              color: context.gi.textPrimary,
               height: 1.5,
             ),
           ),
@@ -280,13 +280,13 @@ class _ActionCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(AppSpacing.lg),
         decoration: BoxDecoration(
-          color: AppColors.white.withValues(alpha: 0.05),
+          color: context.gi.fill,
           borderRadius: BorderRadius.circular(AppSpacing.lg),
-          border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+          border: Border.all(color: context.gi.hairline),
         ),
         child: Row(
           children: [
-            Icon(icon, size: 21, color: AppColors.white),
+            Icon(icon, size: 21, color: context.gi.textPrimary),
             const SizedBox(width: AppSpacing.md),
             Expanded(
               child: Column(
@@ -295,7 +295,7 @@ class _ActionCard extends StatelessWidget {
                   Text(
                     title,
                     style: context.titleSmall?.copyWith(
-                      color: AppColors.white,
+                      color: context.gi.textPrimary,
                       fontWeight: AppFontWeight.semiBold,
                     ),
                   ),
@@ -303,7 +303,7 @@ class _ActionCard extends StatelessWidget {
                   Text(
                     subtitle,
                     style: context.bodySmall?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.58),
+                      color: context.gi.textSecondary,
                       height: 1.4,
                     ),
                   ),
@@ -312,7 +312,7 @@ class _ActionCard extends StatelessWidget {
             ),
             if (badge != null && badge! > 0) ...[
               const SizedBox(width: AppSpacing.sm),
-              MetaChip(label: '$badge', accent: const Color(0xFFD79463)),
+              MetaChip(label: '$badge', accent: context.gi.warning),
             ],
           ],
         ),
@@ -329,17 +329,17 @@ class _SubmissionRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final accent = switch (submission.status) {
-      SubmissionStatus.approved => const Color(0xFF56B48C),
-      SubmissionStatus.rejected => const Color(0xFFD79463),
-      _ => AppColors.white,
+      SubmissionStatus.approved => context.gi.correct,
+      SubmissionStatus.rejected => context.gi.warning,
+      _ => context.gi.textPrimary,
     };
 
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.04),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.md),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.1)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -352,7 +352,7 @@ class _SubmissionRow extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: context.bodySmall?.copyWith(
-                    color: AppColors.white.withValues(alpha: 0.88),
+                    color: context.gi.textPrimary,
                     height: 1.35,
                   ),
                 ),
@@ -360,7 +360,7 @@ class _SubmissionRow extends StatelessWidget {
               const SizedBox(width: AppSpacing.sm),
               MetaChip(
                 label: submission.status.label,
-                accent: accent == AppColors.white ? null : accent,
+                accent: accent == context.gi.textPrimary ? null : accent,
               ),
             ],
           ),
@@ -369,7 +369,7 @@ class _SubmissionRow extends StatelessWidget {
             Text(
               'Freigegeben — erscheint ${submission.scheduledLabel}.',
               style: context.labelSmall?.copyWith(
-                color: const Color(0xFF56B48C),
+                color: context.gi.correct,
                 fontWeight: AppFontWeight.medium,
               ),
             ),
@@ -379,7 +379,7 @@ class _SubmissionRow extends StatelessWidget {
             Text(
               'Redaktion: ${submission.editorNote}',
               style: context.labelSmall?.copyWith(
-                color: AppColors.white.withValues(alpha: 0.5),
+                color: context.gi.textSecondary,
                 height: 1.35,
               ),
             ),

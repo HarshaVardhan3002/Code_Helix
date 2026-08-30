@@ -64,12 +64,9 @@ class _ShellPageState extends State<ShellPage> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light.copyWith(
-        statusBarColor: AppColors.transparent,
-        systemNavigationBarColor: AppColors.transparent,
-      ),
+      value: GiTheme.overlayFor(Theme.of(context).brightness),
       child: Scaffold(
-        backgroundColor: AppColors.black,
+        backgroundColor: context.gi.base,
         body: Stack(
           fit: StackFit.expand,
           children: [
@@ -122,7 +119,7 @@ class _ShellTopBar extends StatelessWidget {
               height: ShellMetrics.topBarHeight - AppSpacing.lg,
               child: Row(
                 children: [
-                  const AppLogo(width: 88, height: 24, color: AppColors.white),
+                  const GiWordmark(),
                   const Spacer(),
                   if (user != null) _ProfileButton(user: user),
                 ],
@@ -152,13 +149,13 @@ class _ProfileButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: AppColors.white.withValues(alpha: 0.1),
-          border: Border.all(color: AppColors.white.withValues(alpha: 0.22)),
+          color: context.gi.hairline,
+          border: Border.all(color: context.gi.hairline),
         ),
         child: Text(
           user.initials,
           style: context.labelMedium?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.9),
+            color: context.gi.textPrimary,
             fontWeight: AppFontWeight.semiBold,
           ),
         ),
@@ -227,7 +224,7 @@ class _NavItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colour = AppColors.white.withValues(alpha: active ? 1 : 0.55);
+    final colour = context.gi.textPrimary.withValues(alpha: active ? 1 : 0.55);
 
     return Tappable.faded(
       onTap: onTap,

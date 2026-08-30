@@ -20,7 +20,7 @@ class ReviewQueuePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: context.gi.base,
       body: SurfaceBackground(
         child: BlocBuilder<CatalogCubit, CatalogState>(
           builder: (context, state) {
@@ -40,7 +40,7 @@ class ReviewQueuePage extends StatelessWidget {
                     Text(
                       'Redaktionsprüfung',
                       style: context.headlineSmall?.copyWith(
-                        color: AppColors.white,
+                        color: context.gi.textPrimary,
                         fontWeight: AppFontWeight.semiBold,
                         letterSpacing: -0.4,
                       ),
@@ -49,7 +49,7 @@ class ReviewQueuePage extends StatelessWidget {
                     Text(
                       'Nichts erscheint, bevor hier freigegeben wurde.',
                       style: context.bodyMedium?.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.6),
+                        color: context.gi.textSecondary,
                       ),
                     ),
                     const SizedBox(height: AppSpacing.xlg),
@@ -57,7 +57,7 @@ class ReviewQueuePage extends StatelessWidget {
                       Text(
                         'Keine offenen Einreichungen.',
                         style: context.bodyMedium?.copyWith(
-                          color: AppColors.white.withValues(alpha: 0.5),
+                          color: context.gi.textSecondary,
                         ),
                       )
                     else
@@ -91,9 +91,9 @@ class _ReviewCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.05),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.lg),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +111,7 @@ class _ReviewCard extends StatelessWidget {
               Text(
                 submission.authorName,
                 style: context.labelSmall?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.5),
+                  color: context.gi.textSecondary,
                 ),
               ),
             ],
@@ -120,7 +120,7 @@ class _ReviewCard extends StatelessWidget {
           Text(
             entry.quiz.question,
             style: context.titleSmall?.copyWith(
-              color: AppColors.white,
+              color: context.gi.textPrimary,
               height: 1.3,
               fontWeight: AppFontWeight.semiBold,
             ),
@@ -129,7 +129,7 @@ class _ReviewCard extends StatelessWidget {
           Text(
             entry.revealTitle,
             style: context.bodySmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.7),
+              color: context.gi.textPrimary,
               height: 1.4,
             ),
           ),
@@ -151,7 +151,7 @@ class _ReviewCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppSpacing.md),
                 border: Border.all(
-                  color: AppColors.white.withValues(alpha: 0.2),
+                  color: context.gi.hairline,
                 ),
               ),
               child: Row(
@@ -160,13 +160,13 @@ class _ReviewCard extends StatelessWidget {
                   Icon(
                     Icons.visibility_outlined,
                     size: 15,
-                    color: AppColors.white.withValues(alpha: 0.75),
+                    color: context.gi.textPrimary,
                   ),
                   const SizedBox(width: AppSpacing.sm),
                   Text(
                     'Als Leser ansehen',
                     style: context.labelMedium?.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.85),
+                      color: context.gi.textPrimary,
                     ),
                   ),
                 ],
@@ -198,12 +198,9 @@ class _ReviewCard extends StatelessWidget {
                     // at an empty page wondering whether it worked.
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                        behavior: SnackBarBehavior.floating,
-                        backgroundColor: Color(0xFF1C1F25),
                         content: Text(
                           'Freigegeben. Steht jetzt als Fall des Tages in '
                           'Heute.',
-                          style: TextStyle(color: AppColors.white),
                         ),
                       ),
                     );
@@ -239,16 +236,16 @@ class _DecisionButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: outlined
               ? AppColors.transparent
-              : AppColors.white.withValues(alpha: 0.92),
+              : context.gi.textPrimary,
           borderRadius: BorderRadius.circular(AppSpacing.lg),
           border: Border.all(
-            color: AppColors.white.withValues(alpha: outlined ? 0.25 : 0),
+            color: outlined ? context.gi.hairline : AppColors.transparent,
           ),
         ),
         child: Text(
           label,
           style: context.titleSmall?.copyWith(
-            color: outlined ? AppColors.white : const Color(0xFF0B0F14),
+            color: outlined ? context.gi.textPrimary : context.gi.base,
             fontWeight: AppFontWeight.semiBold,
           ),
         ),
@@ -270,13 +267,13 @@ class _BackButton extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Tappable.scaled(
             onTap: Navigator.of(context).pop,
-            child: const GlassSurface(
+            child: GlassSurface(
               level: GlassLevel.chip,
-              padding: EdgeInsets.all(AppSpacing.sm),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               child: Icon(
                 Icons.arrow_back_rounded,
                 size: 18,
-                color: AppColors.white,
+                color: context.gi.textPrimary,
               ),
             ),
           ),

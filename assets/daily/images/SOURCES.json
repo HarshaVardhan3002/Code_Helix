@@ -1,0 +1,58 @@
+{
+ "paris_iia_colon_ascendens.jpg": {
+  "class": "polyps",
+  "file": "17fb3a39-4581-454d-a91d-f7f45b8fb45f.jpg"
+ },
+ "colitis_ulcerosa_mayo_3.jpg": {
+  "class": "ulcerative-colitis",
+  "file": "477b9f23-938d-4035-bb9e-c91e130eb113.jpg"
+ },
+ "oesophagitis_erosionen_distal.jpg": {
+  "class": "esophagitis",
+  "file": "10b9522f-f3d7-40c0-bfff-c82f2228850a.jpg"
+ },
+ "emr_lifting_kolonpolyp.jpg": {
+  "class": "dyed-lifted-polyps",
+  "file": "1b03c9ad-70b6-484f-b342-8614d5062e34.jpg"
+ },
+ "z_linie_uebergang.jpg": {
+  "class": "normal-z-line",
+  "file": "2052a648-302c-4d11-9540-3e6050e76c38.jpg"
+ },
+ "zoekum_landmarken.jpg": {
+  "class": "normal-cecum",
+  "file": "0ab26ff5-3161-4a17-bcf4-95663033af0a.jpg"
+ },
+ "lib_oesophagus_distal.jpg": {
+  "class": "esophagitis",
+  "file": "5b64f132-93e8-4e65-b2a6-ab9c0e0684b9.jpg"
+ },
+ "lib_oesophagus_uebergang.jpg": {
+  "class": "normal-z-line",
+  "file": "5669949b-c284-4b69-8594-85b61e1bb5af.jpg"
+ },
+ "lib_magen_pylorus.jpg": {
+  "class": "normal-pylorus",
+  "file": "3909e6d9-61b3-4d36-82cb-0952fdddfd3f.jpg"
+ },
+ "lib_magen_antrum.jpg": {
+  "class": "normal-pylorus",
+  "file": "5b1b2b8a-fd6b-469d-82e6-4e107f90a37b.jpg"
+ },
+ "lib_kolon_nahfokus.jpg": {
+  "class": "polyps",
+  "file": "0c9881d2-f21d-4fa2-a003-616b86d3c704.jpg"
+ },
+ "lib_kolon_uebersicht.jpg": {
+  "class": "ulcerative-colitis",
+  "file": "1345041f-914b-4033-b213-f4507d9b569c.jpg"
+ },
+ "lib_kolon_zoekum.jpg": {
+  "class": "normal-cecum",
+  "file": "1476c16a-2bec-40f0-ad30-06cbffa09187.jpg"
+ },
+ "lib_kolon_resektionsrand.jpg": {
+  "class": "dyed-resection-margins",
+  "file": "3c389cf8-6931-49ea-b7f8-96b8c456dd40.jpg"
+ }
+}

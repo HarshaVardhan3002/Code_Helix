@@ -7,7 +7,11 @@
       "region": "kolon",
       "summary": "Morphologie vor Technik: wie die Paris-Klassifikation die Resektion bestimmt.",
       "unverified": true,
-      "caseIds": ["paris-iia-colon-ascendens"],
+      "caseIds": [
+        "paris-iia-colon-ascendens",
+        "emr-lifting-kolonpolyp",
+        "zoekum-landmarken-vollstaendigkeit"
+      ],
       "citation": {
         "guideline": "S3-Leitlinie Kolorektales Karzinom",
         "register": "021-007OL",
@@ -23,7 +27,8 @@
             "register": "021-007OL",
             "version": null,
             "recommendation": null
-          }
+          },
+          "quote": "Die endoskopische Klassifikation der Läsionsmorphologie erfolgt vor der Resektionsentscheidung und bestimmt die Wahl des Resektionsverfahrens."
         },
         {
           "heading": "En bloc oder piecemeal",
@@ -53,7 +58,9 @@
       "region": "kolon",
       "summary": "Was den endoskopischen Mayo-Score bestimmt und warum er Therapieentscheidungen trägt.",
       "unverified": true,
-      "caseIds": ["colitis-ulcerosa-mayo-3"],
+      "caseIds": [
+        "colitis-ulcerosa-mayo-3"
+      ],
       "citation": {
         "guideline": "S3-Leitlinie Colitis ulcerosa",
         "register": "021-009",
@@ -99,7 +106,9 @@
       "region": "magen",
       "summary": "Warum der sichtbare Gefäßstumpf behandelt wird, auch wenn nichts blutet.",
       "unverified": true,
-      "caseIds": ["forrest-iia-antrumulkus"],
+      "caseIds": [
+        "forrest-iia-antrumulkus"
+      ],
       "citation": {
         "guideline": "S2k-Leitlinie Gastrointestinale Blutung (DGVS)",
         "register": null,
@@ -145,7 +154,9 @@
       "region": "oesophagus",
       "summary": "Drei Säulen gleichzeitig — und die eine, die am häufigsten vergessen wird.",
       "unverified": true,
-      "caseIds": ["oesophagusvarizen-red-colour-signs"],
+      "caseIds": [
+        "oesophagusvarizen-red-colour-signs"
+      ],
       "citation": {
         "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
         "register": null,
@@ -191,7 +202,9 @@
       "region": "duodenum",
       "summary": "Warum das endoskopische Bild allein weder ausschließt noch beweist.",
       "unverified": true,
-      "caseIds": ["duodenum-scalloping-zoeliakie"],
+      "caseIds": [
+        "duodenum-scalloping-zoeliakie"
+      ],
       "citation": {
         "guideline": "S2k-Leitlinie Zöliakie (DGVS)",
         "register": null,
@@ -271,6 +284,56 @@
           "citation": {
             "guideline": "S3-Leitlinie Morbus Crohn",
             "register": "021-004",
+            "version": null,
+            "recommendation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "refluxkrankheit-barrett",
+      "title": "Refluxkrankheit: Ösophagitis & Barrett",
+      "region": "oesophagus",
+      "summary": "Was die LA-Klassifikation misst, und warum ein Barrett-Segment zwei Bezugslinien braucht.",
+      "unverified": true,
+      "caseIds": [
+        "refluxoesophagitis-la-klassifikation",
+        "z-linie-abgrenzung-barrett"
+      ],
+      "citation": {
+        "guideline": "S2k-Leitlinie Gastroösophageale Refluxkrankheit (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "sections": [
+        {
+          "heading": "Was eingeteilt wird — und was nicht",
+          "body": "Die Los-Angeles-Klassifikation beschreibt ausschliesslich Schleimhautdefekte, sogenannte mucosal breaks. Erythem, Ödem und vermehrte Gefässzeichnung gehen nicht ein. Der Grund ist methodisch und nicht kosmetisch: Farbmerkmale sind zwischen Untersuchern schlecht reproduzierbar, Defekte mit erkennbarer Begrenzung sind es gut. Eingeteilt wird nach der Länge der Läsionen, nach ihrer Konfluenz zwischen zwei Faltenkuppen und nach dem Anteil der Zirkumferenz.",
+          "quote": "Eingeteilt werden ausschliesslich umschriebene Schleimhautdefekte mit erkennbarer Begrenzung zur umgebenden Schleimhaut; Erythem und vermehrte Gefässzeichnung allein begründen keinen Grad.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Gastroösophageale Refluxkrankheit (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Zwei Linien, nicht eine",
+          "body": "Die Z-Linie markiert den Wechsel von Platten- zu Zylinderepithel. Der ösophagogastrale Übergang wird endoskopisch am proximalen Ende der Magenfalten festgelegt. Erst der Abstand zwischen beiden ist das, was als Barrett-Segment vermessen wird — zirkuläre Ausdehnung und maximale Zungenlänge nach den Prag-C-&-M-Kriterien. Ohne die zweite Bezugslinie ist eine hoch stehende Z-Linie nicht von einer Hiatushernie zu unterscheiden.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Gastroösophageale Refluxkrankheit (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Was der Befund auslösen soll",
+          "body": "Ein endoskopischer Befund ist erst dann handlungsleitend, wenn er die nächste Entscheidung benennt: Dauer und Dosis der Säuresuppression, die Notwendigkeit einer Biopsieentnahme aus dem metaplastischen Segment, und ob und in welchem Abstand kontrolliert wird. Ein Befundtext, der eine Klassifikation nennt und die Konsequenz offenlässt, verschiebt die Entscheidung nur.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Gastroösophageale Refluxkrankheit (DGVS)",
+            "register": null,
             "version": null,
             "recommendation": null
           }

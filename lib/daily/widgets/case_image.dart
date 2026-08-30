@@ -46,49 +46,61 @@ class CaseImage extends StatelessWidget {
 /// The gradient that buys back contrast for the overlaid surfaces.
 ///
 /// Glass takes its colour from what is behind it, so over a bright, washed-out
-/// frame the question panel loses its edges and white type stops reading. The
+/// frame the question panel loses its edges and its type stops reading. The
 /// scrim guarantees legibility across arbitrary imagery instead of hoping
 /// every frame happens to be dark enough.
+///
+/// It fades toward [GiColors.mediaScrim] and so inverts with the scheme: the
+/// frame is veiled black under dark glass, white under light glass. The frame
+/// itself is never recoloured or desaturated - mucosal hue is the finding.
+///
+/// The light scheme needs a heavier veil than the dark one. A dark panel over
+/// a dark-scrimmed frame only has to be slightly darker than what surrounds
+/// it; near-black text on a white panel over a bright pink oesophagus needs
+/// the frame genuinely knocked back first.
 class _LegibilityScrim extends StatelessWidget {
   const _LegibilityScrim();
 
   @override
   Widget build(BuildContext context) {
-    return const IgnorePointer(
+    final scrim = context.gi.mediaScrim;
+    final dark = Theme.of(context).brightness == Brightness.dark;
+    final steps = dark
+        ? const [0.50, 0.10, 0.35, 0.82]
+        : const [0.62, 0.22, 0.48, 0.90];
+
+    return IgnorePointer(
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: [0, 0.24, 0.5, 1],
+            stops: const [0, 0.24, 0.5, 1],
             colors: [
-              Color(0x8005070A),
-              Color(0x1A05070A),
-              Color(0x5905070A),
-              Color(0xD105070A),
+              for (final a in steps) scrim.withValues(alpha: a),
             ],
           ),
         ),
-        child: SizedBox.expand(),
+        child: const SizedBox.expand(),
       ),
     );
   }
 }
 
-/// Stand-in shown until real endoscopy imagery is bundled.
+/// Stand-in shown where a case has no licensed frame yet.
 ///
 /// Deliberately abstract. It must not read as a photograph of a real
-/// examination — a plausible-looking fake endoscopic frame under a real
+/// examination - a plausible-looking fake endoscopic frame under a real
 /// register number is exactly the failure mode the citation rules exist to
-/// prevent. So: tissue-adjacent tones, no structures, and a marker that says
-/// the image is missing.
+/// prevent. So: no structures, no tissue colour, and a marker that says the
+/// image is missing.
 ///
-/// It is not a flat grey box either, because the glass panel above takes its
-/// colour and refraction from what is behind it. Over black, the glass renders
-/// as nothing and the whole surface reads as a plain dark card.
+/// It is not a flat fill either, because the glass panel above takes its
+/// colour and refraction from what is behind it. Over one flat tone the glass
+/// renders as nothing and the whole surface reads as a plain card.
 ///
-/// Names the anatomical region and nothing else. The earlier version listed
-/// the case's clinical tags here, which handed over the diagnosis before the
+/// Names the anatomical region and nothing else. An earlier version listed the
+/// case's clinical tags here, which handed over the diagnosis before the
 /// question had been asked.
 class _MissingImage extends StatelessWidget {
   const _MissingImage({required this.region});
@@ -97,38 +109,44 @@ class _MissingImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final gi = context.gi;
+    final dark = Theme.of(context).brightness == Brightness.dark;
+
     return Stack(
       fit: StackFit.expand,
       children: [
-        const DecoratedBox(
+        DecoratedBox(
           decoration: BoxDecoration(
             gradient: RadialGradient(
-              center: Alignment(-0.35, -0.55),
+              center: const Alignment(-0.35, -0.55),
               radius: 1.25,
-              colors: [Color(0xFF7A3F42), Color(0xFF3B2226), Color(0xFF16171C)],
-              stops: [0, 0.5, 1],
+              colors: dark
+                  ? const [
+                      Color(0xFF23414F),
+                      Color(0xFF12222C),
+                      Color(0xFF060B0F),
+                    ]
+                  : const [
+                      Color(0xFFFFFFFF),
+                      Color(0xFFDCE7EF),
+                      Color(0xFFB9CBD8),
+                    ],
+              stops: const [0, 0.5, 1],
             ),
           ),
         ),
         // A second, offset lobe. One gradient reads as a vignette; two read as
         // a lit cavity, which is what gives the glass above something with
         // direction to bend.
-        const DecoratedBox(
+        DecoratedBox(
           decoration: BoxDecoration(
             gradient: RadialGradient(
-              center: Alignment(0.75, -0.1),
+              center: const Alignment(0.75, -0.1),
               radius: 0.85,
-              colors: [Color(0x66C97A62), Color(0x00C97A62)],
-            ),
-          ),
-        ),
-        const DecoratedBox(
-          decoration: BoxDecoration(
-            gradient: RadialGradient(
-              center: Alignment(0.1, 0.35),
-              radius: 1.1,
-              colors: [Color(0x0005070A), Color(0xB305070A)],
-              stops: [0.45, 1],
+              colors: [
+                gi.action.withValues(alpha: dark ? 0.22 : 0.14),
+                gi.action.withValues(alpha: 0),
+              ],
             ),
           ),
         ),
@@ -142,13 +160,13 @@ class _MissingImage extends StatelessWidget {
               Icon(
                 Icons.image_outlined,
                 size: AppSpacing.xxlg,
-                color: AppColors.white.withValues(alpha: 0.35),
+                color: gi.textSecondary,
               ),
               const SizedBox(height: AppSpacing.md),
               Text(
                 'BILD FOLGT',
                 style: context.labelSmall?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.55),
+                  color: gi.textSecondary,
                   letterSpacing: 2,
                   fontWeight: AppFontWeight.semiBold,
                 ),
@@ -157,7 +175,7 @@ class _MissingImage extends StatelessWidget {
               Text(
                 region.label,
                 style: context.labelMedium?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.45),
+                  color: gi.textSecondary,
                   letterSpacing: 0.6,
                 ),
               ),

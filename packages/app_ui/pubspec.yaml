@@ -38,6 +38,28 @@ flutter:
     - assets/icons/
     - assets/images/
   fonts:
+    - family: FiraSans
+      fonts:
+        - asset: assets/fonts/FiraSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/FiraSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/FiraSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/FiraSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/FiraSans-Light.ttf
+          weight: 300
+    - family: Newsreader
+      fonts:
+        - asset: assets/fonts/Newsreader-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Newsreader-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Newsreader-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Newsreader-Regular.ttf
+          weight: 400
     - family: Inter
       fonts:
         - asset: assets/fonts/Inter-ExtraBold.ttf

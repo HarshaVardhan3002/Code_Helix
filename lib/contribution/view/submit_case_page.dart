@@ -169,7 +169,7 @@ class _SubmitCasePageState extends State<SubmitCasePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: context.gi.base,
       body: SurfaceBackground(
         child: BlocBuilder<CatalogCubit, CatalogState>(
           builder: (context, state) {
@@ -189,7 +189,7 @@ class _SubmitCasePageState extends State<SubmitCasePage> {
                     Text(
                       'Fall einreichen',
                       style: context.headlineSmall?.copyWith(
-                        color: AppColors.white,
+                        color: context.gi.textPrimary,
                         fontWeight: AppFontWeight.semiBold,
                         letterSpacing: -0.4,
                       ),
@@ -199,7 +199,7 @@ class _SubmitCasePageState extends State<SubmitCasePage> {
                       'Bild aus der lizenzierten Sammlung wählen, Frage und '
                       'vier Optionen schreiben, Quelle zuordnen.',
                       style: context.bodyMedium?.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.6),
+                        color: context.gi.textSecondary,
                         height: 1.45,
                       ),
                     ),
@@ -279,7 +279,7 @@ class _SubmitCasePageState extends State<SubmitCasePage> {
                       'Redaktion freigegeben hat.',
                       textAlign: TextAlign.center,
                       style: context.labelSmall?.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.4),
+                        color: context.gi.textSecondary,
                         height: 1.4,
                       ),
                     ),
@@ -305,12 +305,12 @@ class _Screening extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const AppCircularProgress(AppColors.white),
+          AppCircularProgress(context.gi.action),
           const SizedBox(height: AppSpacing.lg),
           Text(
             'Vorprüfung läuft',
             style: context.titleSmall?.copyWith(
-              color: AppColors.white,
+              color: context.gi.textPrimary,
               fontWeight: AppFontWeight.semiBold,
             ),
           ),
@@ -319,7 +319,7 @@ class _Screening extends StatelessWidget {
             'Der Fall wird gegen die zugeordnete Leitlinie abgeglichen.',
             textAlign: TextAlign.center,
             style: context.bodySmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.55),
+              color: context.gi.textSecondary,
             ),
           ),
         ],
@@ -345,7 +345,7 @@ class _ExampleButton extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(AppSpacing.lg),
-          border: Border.all(color: AppColors.white.withValues(alpha: 0.2)),
+          border: Border.all(color: context.gi.hairline),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -353,13 +353,13 @@ class _ExampleButton extends StatelessWidget {
             Icon(
               Icons.bolt_outlined,
               size: 16,
-              color: AppColors.white.withValues(alpha: 0.75),
+              color: context.gi.textPrimary,
             ),
             const SizedBox(width: AppSpacing.sm),
             Text(
               'Beispielfall einsetzen (Demo)',
               style: context.labelMedium?.copyWith(
-                color: AppColors.white.withValues(alpha: 0.85),
+                color: context.gi.textPrimary,
               ),
             ),
           ],
@@ -388,7 +388,7 @@ class _ImagePicker extends StatelessWidget {
         Text(
           'BILD AUS DER SAMMLUNG',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.45),
+            color: context.gi.textSecondary,
             letterSpacing: 1.4,
             fontSize: 9.5,
             fontWeight: AppFontWeight.semiBold,
@@ -421,7 +421,7 @@ class _ImagePicker extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(AppSpacing.md),
                           border: Border.all(
-                            color: AppColors.white.withValues(
+                            color: context.gi.textPrimary.withValues(
                               alpha: active ? 0.85 : 0.14,
                             ),
                             width: active ? 1.6 : 1,
@@ -431,15 +431,9 @@ class _ImagePicker extends StatelessWidget {
                         child: Image.asset(
                           image.asset,
                           fit: BoxFit.cover,
-                          errorBuilder: (context, _, _) => const DecoratedBox(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [Color(0xFF5C3A3C), Color(0xFF16181D)],
-                              ),
-                            ),
-                            child: SizedBox.expand(),
+                          errorBuilder: (context, _, _) => DecoratedBox(
+                            decoration: BoxDecoration(color: context.gi.fill),
+                            child: const SizedBox.expand(),
                           ),
                         ),
                       ),
@@ -449,7 +443,7 @@ class _ImagePicker extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: context.labelSmall?.copyWith(
-                          color: AppColors.white.withValues(
+                          color: context.gi.textPrimary.withValues(
                             alpha: active ? 0.9 : 0.5,
                           ),
                           height: 1.3,
@@ -467,7 +461,7 @@ class _ImagePicker extends StatelessWidget {
           'Kein Upload: eigene Aufnahmen sind Patientendaten. '
           'Einwilligungsstrecke ist Roadmap.',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.4),
+            color: context.gi.textSecondary,
             height: 1.35,
           ),
         ),
@@ -490,7 +484,7 @@ class _FocusPicker extends StatelessWidget {
         Text(
           'FRAGETYP',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.45),
+            color: context.gi.textSecondary,
             letterSpacing: 1.4,
             fontSize: 9.5,
             fontWeight: AppFontWeight.semiBold,
@@ -511,12 +505,12 @@ class _FocusPicker extends StatelessWidget {
                     vertical: AppSpacing.sm,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.white.withValues(
+                    color: context.gi.textPrimary.withValues(
                       alpha: value == focus ? 0.16 : 0.05,
                     ),
                     borderRadius: BorderRadius.circular(AppSpacing.lg),
                     border: Border.all(
-                      color: AppColors.white.withValues(
+                      color: context.gi.textPrimary.withValues(
                         alpha: value == focus ? 0.4 : 0.12,
                       ),
                     ),
@@ -524,7 +518,7 @@ class _FocusPicker extends StatelessWidget {
                   child: Text(
                     value.label,
                     style: context.labelMedium?.copyWith(
-                      color: AppColors.white.withValues(
+                      color: context.gi.textPrimary.withValues(
                         alpha: value == focus ? 1 : 0.68,
                       ),
                     ),
@@ -559,7 +553,7 @@ class _OptionsEditor extends StatelessWidget {
         Text(
           'VIER OPTIONEN',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.45),
+            color: context.gi.textSecondary,
             letterSpacing: 1.4,
             fontSize: 9.5,
             fontWeight: AppFontWeight.semiBold,
@@ -570,7 +564,7 @@ class _OptionsEditor extends StatelessWidget {
           'Jede Option braucht eine Begründung — auch die falschen. '
           'Alle vier werden nach der Antwort angezeigt.',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.4),
+            color: context.gi.textSecondary,
             height: 1.35,
           ),
         ),
@@ -581,7 +575,7 @@ class _OptionsEditor extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(AppSpacing.lg),
               border: Border.all(
-                color: AppColors.white.withValues(
+                color: context.gi.textPrimary.withValues(
                   alpha: index == correctIndex ? 0.3 : 0.1,
                 ),
               ),
@@ -602,8 +596,8 @@ class _OptionsEditor extends StatelessWidget {
                                 : Icons.radio_button_unchecked_rounded,
                             size: 17,
                             color: index == correctIndex
-                                ? kVerdictCorrect
-                                : AppColors.white.withValues(alpha: 0.4),
+                                ? context.gi.correct
+                                : context.gi.textSecondary,
                           ),
                           const SizedBox(width: AppSpacing.sm),
                           Text(
@@ -612,8 +606,8 @@ class _OptionsEditor extends StatelessWidget {
                                 : 'Als richtig markieren',
                             style: context.labelSmall?.copyWith(
                               color: index == correctIndex
-                                  ? kVerdictCorrect
-                                  : AppColors.white.withValues(alpha: 0.5),
+                                  ? context.gi.correct
+                                  : context.gi.textSecondary,
                             ),
                           ),
                         ],
@@ -663,7 +657,7 @@ class _TopicPicker extends StatelessWidget {
         Text(
           'QUELLE ZUORDNEN',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.45),
+            color: context.gi.textSecondary,
             letterSpacing: 1.4,
             fontSize: 9.5,
             fontWeight: AppFontWeight.semiBold,
@@ -677,12 +671,12 @@ class _TopicPicker extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(AppSpacing.md),
               decoration: BoxDecoration(
-                color: AppColors.white.withValues(
+                color: context.gi.textPrimary.withValues(
                   alpha: topic.id == selected?.id ? 0.09 : 0.03,
                 ),
                 borderRadius: BorderRadius.circular(AppSpacing.md),
                 border: Border.all(
-                  color: AppColors.white.withValues(
+                  color: context.gi.textPrimary.withValues(
                     alpha: topic.id == selected?.id ? 0.35 : 0.1,
                   ),
                 ),
@@ -694,7 +688,7 @@ class _TopicPicker extends StatelessWidget {
                         ? Icons.radio_button_checked_rounded
                         : Icons.radio_button_unchecked_rounded,
                     size: 16,
-                    color: AppColors.white.withValues(
+                    color: context.gi.textPrimary.withValues(
                       alpha: topic.id == selected?.id ? 0.9 : 0.35,
                     ),
                   ),
@@ -706,7 +700,7 @@ class _TopicPicker extends StatelessWidget {
                         Text(
                           topic.title,
                           style: context.bodySmall?.copyWith(
-                            color: AppColors.white.withValues(alpha: 0.88),
+                            color: context.gi.textPrimary,
                           ),
                         ),
                         const SizedBox(height: 2),
@@ -739,15 +733,15 @@ class _SubmitButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: AppColors.white.withValues(alpha: enabled ? 0.92 : 0.12),
+          color: enabled ? context.gi.action : context.gi.fillStrong,
           borderRadius: BorderRadius.circular(AppSpacing.lg),
         ),
         child: Text(
           'Zur Vorprüfung einreichen',
           style: context.titleSmall?.copyWith(
             color: enabled
-                ? const Color(0xFF0B0F14)
-                : AppColors.white.withValues(alpha: 0.4),
+                ? Theme.of(context).colorScheme.onPrimary
+                : context.gi.textSecondary,
             fontWeight: AppFontWeight.semiBold,
           ),
         ),
@@ -769,13 +763,13 @@ class _BackButton extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Tappable.scaled(
             onTap: Navigator.of(context).pop,
-            child: const GlassSurface(
+            child: GlassSurface(
               level: GlassLevel.chip,
-              padding: EdgeInsets.all(AppSpacing.sm),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               child: Icon(
                 Icons.arrow_back_rounded,
                 size: 18,
-                color: AppColors.white,
+                color: context.gi.textPrimary,
               ),
             ),
           ),

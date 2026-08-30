@@ -5,6 +5,7 @@ import 'package:flutter_instagram_offline_first_clone/catalog/catalog.dart';
 import 'package:flutter_instagram_offline_first_clone/daily/daily.dart';
 import 'package:flutter_instagram_offline_first_clone/progress/progress.dart';
 import 'package:flutter_instagram_offline_first_clone/session/session.dart';
+import 'package:flutter_instagram_offline_first_clone/settings/settings.dart';
 import 'package:flutter_instagram_offline_first_clone/shell/shell.dart';
 
 /// {@template profile_page}
@@ -28,7 +29,7 @@ class ProfilePage extends StatelessWidget {
     final user = context.watch<SessionCubit>().state;
 
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: context.gi.base,
       body: SurfaceBackground(
         child: BlocBuilder<CatalogCubit, CatalogState>(
           builder: (context, catalogState) {
@@ -90,6 +91,8 @@ class ProfilePage extends StatelessWidget {
                     const SizedBox(height: AppSpacing.xxlg),
                     _DifficultCases(cases: summary.difficult),
                     const SizedBox(height: AppSpacing.xxlg),
+                    const _Appearance(),
+                    const SizedBox(height: AppSpacing.xxlg),
                     _SignOutButton(),
                   ],
                 ),
@@ -119,13 +122,13 @@ class _Identity extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: AppColors.white.withValues(alpha: 0.09),
-            border: Border.all(color: AppColors.white.withValues(alpha: 0.2)),
+            color: context.gi.fill,
+            border: Border.all(color: context.gi.hairline),
           ),
           child: Text(
             user.initials,
             style: context.titleLarge?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.9),
+              color: context.gi.textPrimary,
               fontWeight: AppFontWeight.semiBold,
             ),
           ),
@@ -138,7 +141,7 @@ class _Identity extends StatelessWidget {
               Text(
                 user.name,
                 style: context.titleLarge?.copyWith(
-                  color: AppColors.white,
+                  color: context.gi.textPrimary,
                   fontWeight: AppFontWeight.semiBold,
                   letterSpacing: -0.3,
                 ),
@@ -147,7 +150,7 @@ class _Identity extends StatelessWidget {
               Text(
                 user.affiliation,
                 style: context.bodySmall?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.55),
+                  color: context.gi.textSecondary,
                 ),
               ),
               const SizedBox(height: AppSpacing.sm),
@@ -176,9 +179,9 @@ class _Stat extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.05),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.lg),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,7 +189,7 @@ class _Stat extends StatelessWidget {
           Text(
             value,
             style: context.headlineSmall?.copyWith(
-              color: AppColors.white,
+              color: context.gi.textPrimary,
               fontWeight: AppFontWeight.semiBold,
               letterSpacing: -0.5,
             ),
@@ -195,14 +198,14 @@ class _Stat extends StatelessWidget {
           Text(
             label,
             style: context.labelMedium?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.8),
+              color: context.gi.textPrimary,
             ),
           ),
           const SizedBox(height: 1),
           Text(
             caption,
             style: context.labelSmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.4),
+              color: context.gi.textSecondary,
             ),
           ),
         ],
@@ -231,7 +234,7 @@ class _DifficultCases extends StatelessWidget {
         Text(
           'SCHWIERIGE FÄLLE',
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.45),
+            color: context.gi.textSecondary,
             letterSpacing: 1.5,
             fontSize: 9.5,
             fontWeight: AppFontWeight.semiBold,
@@ -243,7 +246,7 @@ class _DifficultCases extends StatelessWidget {
               ? 'Noch nichts danebengegangen.'
               : 'Falsch beantwortet — hier liegt der Lerngewinn.',
           style: context.bodySmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.5),
+            color: context.gi.textSecondary,
           ),
         ),
         if (cases.isNotEmpty) ...[
@@ -259,10 +262,10 @@ class _DifficultCases extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
-                  color: AppColors.white.withValues(alpha: 0.04),
+                  color: context.gi.fill,
                   borderRadius: BorderRadius.circular(AppSpacing.md),
                   border: Border.all(
-                    color: AppColors.white.withValues(alpha: 0.1),
+                    color: context.gi.hairline,
                   ),
                 ),
                 child: Row(
@@ -273,7 +276,7 @@ class _DifficultCases extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: context.bodySmall?.copyWith(
-                          color: AppColors.white.withValues(alpha: 0.88),
+                          color: context.gi.textPrimary,
                           height: 1.35,
                         ),
                       ),
@@ -282,7 +285,7 @@ class _DifficultCases extends StatelessWidget {
                     Icon(
                       Icons.chevron_right_rounded,
                       size: 18,
-                      color: AppColors.white.withValues(alpha: 0.35),
+                      color: context.gi.textSecondary,
                     ),
                   ],
                 ),
@@ -292,6 +295,107 @@ class _DifficultCases extends StatelessWidget {
           ],
         ],
       ],
+    );
+  }
+}
+
+/// The scheme picker.
+///
+/// Three segments rather than a switch, because the third state is the
+/// default and the useful one: an endoscopy suite is a dark room and a ward
+/// round is not, and the phone already knows which one the reader is standing
+/// in. A two-way switch would force a choice the device can make better.
+class _Appearance extends StatelessWidget {
+  const _Appearance();
+
+  @override
+  Widget build(BuildContext context) {
+    final gi = context.gi;
+    final selected = context.watch<AppearanceCubit>().state;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'DARSTELLUNG',
+          style: context.labelSmall?.copyWith(
+            color: gi.textSecondary,
+            letterSpacing: 1.5,
+            fontSize: 9.5,
+            fontWeight: AppFontWeight.semiBold,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        DecoratedBox(
+          decoration: BoxDecoration(
+            color: gi.fill,
+            borderRadius: BorderRadius.circular(AppSpacing.lg),
+            border: Border.all(color: gi.hairline),
+          ),
+          child: Row(
+            children: [
+              for (final mode in ThemeMode.values)
+                Expanded(
+                  child: _AppearanceOption(
+                    mode: mode,
+                    active: mode == selected,
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _AppearanceOption extends StatelessWidget {
+  const _AppearanceOption({required this.mode, required this.active});
+
+  final ThemeMode mode;
+  final bool active;
+
+  @override
+  Widget build(BuildContext context) {
+    final gi = context.gi;
+
+    return Semantics(
+      button: true,
+      selected: active,
+      child: Tappable.faded(
+        onTap: () => context.read<AppearanceCubit>().select(mode),
+        borderRadius: BorderRadius.circular(AppSpacing.lg),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 180),
+          padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
+          decoration: BoxDecoration(
+            color: active ? gi.action.withValues(alpha: 0.14) : null,
+            borderRadius: BorderRadius.circular(AppSpacing.lg),
+            border: Border.all(
+              color: active ? gi.action : AppColors.transparent,
+            ),
+          ),
+          child: Column(
+            children: [
+              Icon(
+                mode.icon,
+                size: 19,
+                color: active ? gi.action : gi.textSecondary,
+              ),
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                mode.label,
+                style: context.labelMedium?.copyWith(
+                  color: active ? gi.action : gi.textSecondary,
+                  fontWeight: active
+                      ? AppFontWeight.semiBold
+                      : AppFontWeight.medium,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -310,12 +414,12 @@ class _SignOutButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(AppSpacing.lg),
-          border: Border.all(color: AppColors.white.withValues(alpha: 0.2)),
+          border: Border.all(color: context.gi.hairline),
         ),
         child: Text(
           'Konto wechseln',
           style: context.titleSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.9),
+            color: context.gi.textPrimary,
           ),
         ),
       ),
@@ -336,13 +440,13 @@ class _BackButton extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Tappable.scaled(
             onTap: Navigator.of(context).pop,
-            child: const GlassSurface(
+            child: GlassSurface(
               level: GlassLevel.chip,
-              padding: EdgeInsets.all(AppSpacing.sm),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               child: Icon(
                 Icons.arrow_back_rounded,
                 size: 18,
-                color: AppColors.white,
+                color: context.gi.textPrimary,
               ),
             ),
           ),

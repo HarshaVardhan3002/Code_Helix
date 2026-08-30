@@ -1,5 +1,5 @@
 import 'package:app_ui/src/glass/glass_tokens.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:liquid_glass_renderer/liquid_glass_renderer.dart';
 
 /// {@template glass_layer}
@@ -40,7 +40,11 @@ class GlassLayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LiquidGlassLayer(
-      settings: AppGlass.settingsOf(level, dimmed: dimmed),
+      settings: AppGlass.settingsOf(
+        level,
+        Theme.of(context).brightness,
+        dimmed: dimmed,
+      ),
       fake: fake,
       child: child,
     );
@@ -137,7 +141,8 @@ class GlassSurface extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final effectiveShape = shape ?? AppGlass.shapeOf(level);
+    final scheme = Theme.of(context).brightness;
+    final effectiveShape = shape ?? AppGlass.shapeOf(level, scheme);
     final content = padding == EdgeInsets.zero
         ? child
         : Padding(padding: padding, child: child);
@@ -153,7 +158,7 @@ class GlassSurface extends StatelessWidget {
 
     return LiquidGlass.withOwnLayer(
       shape: effectiveShape,
-      settings: AppGlass.settingsOf(level, dimmed: dimmed),
+      settings: AppGlass.settingsOf(level, scheme, dimmed: dimmed),
       fake: fake,
       glassContainsChild: glassContainsChild,
       clipBehavior: clipBehavior,

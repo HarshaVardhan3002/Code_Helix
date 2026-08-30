@@ -46,7 +46,7 @@ class ContributionField extends StatelessWidget {
         Text(
           label.toUpperCase(),
           style: context.labelSmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.45),
+            color: context.gi.textSecondary,
             letterSpacing: 1.4,
             fontSize: 9.5,
             fontWeight: AppFontWeight.semiBold,
@@ -58,22 +58,22 @@ class ContributionField extends StatelessWidget {
           minLines: minLines,
           maxLines: maxLines,
           style: context.bodyMedium?.copyWith(
-            color: AppColors.white,
+            color: context.gi.textPrimary,
             height: 1.45,
           ),
-          cursorColor: AppColors.white,
+          cursorColor: context.gi.action,
           decoration: InputDecoration(
             isDense: true,
             hintText: hint,
             hintStyle: context.bodyMedium?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.28),
+              color: context.gi.textSecondary,
             ),
             filled: true,
-            fillColor: AppColors.white.withValues(alpha: 0.05),
+            fillColor: context.gi.fill,
             contentPadding: const EdgeInsets.all(AppSpacing.md),
-            border: _border(0.12),
-            enabledBorder: _border(0.12),
-            focusedBorder: _border(0.34),
+            border: _border(context.gi.hairline),
+            enabledBorder: _border(context.gi.hairline),
+            focusedBorder: _border(context.gi.action, 1.5),
           ),
         ),
         if (helper != null) ...[
@@ -81,7 +81,7 @@ class ContributionField extends StatelessWidget {
           Text(
             helper!,
             style: context.labelSmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.4),
+              color: context.gi.textSecondary,
               height: 1.35,
             ),
           ),
@@ -90,8 +90,9 @@ class ContributionField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder _border(double alpha) => OutlineInputBorder(
-    borderRadius: BorderRadius.circular(AppSpacing.md),
-    borderSide: BorderSide(color: AppColors.white.withValues(alpha: alpha)),
-  );
+  OutlineInputBorder _border(Color color, [double width = 1]) =>
+      OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppSpacing.md),
+        borderSide: BorderSide(color: color, width: width),
+      );
 }

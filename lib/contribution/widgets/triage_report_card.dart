@@ -23,9 +23,9 @@ class TriageReportCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.05),
+        color: context.gi.fill,
         borderRadius: BorderRadius.circular(AppSpacing.lg),
-        border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+        border: Border.all(color: context.gi.hairline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,13 +35,13 @@ class TriageReportCard extends StatelessWidget {
               Icon(
                 Icons.auto_awesome_outlined,
                 size: 15,
-                color: AppColors.white.withValues(alpha: 0.55),
+                color: context.gi.textSecondary,
               ),
               const SizedBox(width: AppSpacing.sm),
               Text(
                 'AUTOMATISCHE VORPRÜFUNG',
                 style: context.labelSmall?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.55),
+                  color: context.gi.textSecondary,
                   letterSpacing: 1.4,
                   fontSize: 9.5,
                   fontWeight: AppFontWeight.semiBold,
@@ -53,7 +53,7 @@ class TriageReportCard extends StatelessWidget {
           Text(
             'Zugeordnete Quelle',
             style: context.labelSmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.45),
+              color: context.gi.textSecondary,
             ),
           ),
           const SizedBox(height: AppSpacing.xs),
@@ -66,7 +66,7 @@ class TriageReportCard extends StatelessWidget {
                 ? 'Keine Auffälligkeiten.'
                 : 'Zur Prüfung (${report.flags.length})',
             style: context.labelSmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.45),
+              color: context.gi.textSecondary,
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
@@ -79,7 +79,7 @@ class TriageReportCard extends StatelessWidget {
             'Die Vorprüfung entscheidet nichts. Freigegeben wird '
             'ausschließlich durch die ärztliche Redaktion.',
             style: context.labelSmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.4),
+              color: context.gi.textSecondary,
               height: 1.4,
             ),
           ),
@@ -105,7 +105,7 @@ class _Confidence extends StatelessWidget {
               child: Text(
                 'Begriffliche Übereinstimmung mit dem Thema',
                 style: context.labelSmall?.copyWith(
-                  color: AppColors.white.withValues(alpha: 0.45),
+                  color: context.gi.textSecondary,
                 ),
               ),
             ),
@@ -113,7 +113,7 @@ class _Confidence extends StatelessWidget {
             Text(
               '${(value * 100).round()} %',
               style: context.labelMedium?.copyWith(
-                color: AppColors.white.withValues(alpha: 0.85),
+                color: context.gi.textPrimary,
                 fontWeight: AppFontWeight.semiBold,
               ),
             ),
@@ -125,9 +125,9 @@ class _Confidence extends StatelessWidget {
           child: LinearProgressIndicator(
             value: value,
             minHeight: 4,
-            backgroundColor: AppColors.white.withValues(alpha: 0.1),
+            backgroundColor: context.gi.hairline,
             valueColor: AlwaysStoppedAnimation<Color>(
-              AppColors.white.withValues(alpha: 0.6),
+              context.gi.textSecondary,
             ),
           ),
         ),
@@ -144,9 +144,9 @@ class _Flag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final accent = switch (flag.severity) {
-      TriageSeverity.blocker => kVerdictIncorrect,
-      TriageSeverity.warning => kPlaceholderAmber,
-      TriageSeverity.info => AppColors.white,
+      TriageSeverity.blocker => context.gi.incorrect,
+      TriageSeverity.warning => context.gi.warning,
+      TriageSeverity.info => context.gi.textPrimary,
     };
 
     return Row(
@@ -166,7 +166,7 @@ class _Flag extends StatelessWidget {
           child: Text(
             flag.message,
             style: context.bodySmall?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.8),
+              color: context.gi.textPrimary,
               height: 1.45,
             ),
           ),

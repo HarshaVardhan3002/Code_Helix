@@ -41,7 +41,7 @@ class HeutePage extends StatelessWidget {
         if (today == null) {
           return state.status == CatalogStatus.ready
               ? const _Message('Für heute ist kein Fall veröffentlicht.')
-              : const Center(child: AppCircularProgress(AppColors.white));
+              : Center(child: AppCircularProgress(context.gi.action));
         }
 
         return CaseScope(
@@ -160,7 +160,7 @@ class _Message extends StatelessWidget {
           text,
           textAlign: TextAlign.center,
           style: context.bodyMedium?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.7),
+            color: context.gi.textPrimary,
           ),
         ),
       ),

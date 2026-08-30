@@ -105,7 +105,7 @@ class _Header extends StatelessWidget {
           Text(
             'Bibliothek',
             style: context.headlineSmall?.copyWith(
-              color: AppColors.white,
+              color: context.gi.textPrimary,
               fontWeight: AppFontWeight.semiBold,
               letterSpacing: -0.4,
             ),
@@ -114,7 +114,7 @@ class _Header extends StatelessWidget {
           Text(
             'Nachschlagen statt geprüft werden. Jede Aussage mit ihrer Quelle.',
             style: context.bodyMedium?.copyWith(
-              color: AppColors.white.withValues(alpha: 0.6),
+              color: context.gi.textSecondary,
               height: 1.45,
             ),
           ),
@@ -189,16 +189,16 @@ class _FilterChip extends StatelessWidget {
           vertical: AppSpacing.sm,
         ),
         decoration: BoxDecoration(
-          color: AppColors.white.withValues(alpha: active ? 0.16 : 0.05),
+          color: context.gi.textPrimary.withValues(alpha: active ? 0.16 : 0.05),
           borderRadius: BorderRadius.circular(AppSpacing.lg),
           border: Border.all(
-            color: AppColors.white.withValues(alpha: active ? 0.4 : 0.12),
+            color: active ? context.gi.action : context.gi.hairline,
           ),
         ),
         child: Text(
           label,
           style: context.labelMedium?.copyWith(
-            color: AppColors.white.withValues(alpha: active ? 1 : 0.68),
+            color: context.gi.textPrimary.withValues(alpha: active ? 1 : 0.68),
             fontWeight: active
                 ? AppFontWeight.semiBold
                 : AppFontWeight.regular,
@@ -223,9 +223,9 @@ class _TopicCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(AppSpacing.md),
         decoration: BoxDecoration(
-          color: AppColors.white.withValues(alpha: 0.05),
+          color: context.gi.fill,
           borderRadius: BorderRadius.circular(AppSpacing.lg),
-          border: Border.all(color: AppColors.white.withValues(alpha: 0.12)),
+          border: Border.all(color: context.gi.hairline),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -237,7 +237,7 @@ class _TopicCard extends StatelessWidget {
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               style: context.titleSmall?.copyWith(
-                color: AppColors.white,
+                color: context.gi.textPrimary,
                 height: 1.26,
                 fontWeight: AppFontWeight.semiBold,
               ),
@@ -251,7 +251,7 @@ class _TopicCard extends StatelessWidget {
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               style: context.bodySmall?.copyWith(
-                color: AppColors.white.withValues(alpha: 0.6),
+                color: context.gi.textSecondary,
                 height: 1.4,
               ),
             ),

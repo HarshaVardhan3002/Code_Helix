@@ -2,45 +2,48 @@
   "_readme": "PLATZHALTER-INHALTE. Fachlich nicht geprueft. Reihenfolge IST der Kalender: Index 0 = heute. Zitate: Leitlinienname und AWMF-Registernummer nur dort, wo sie belastbar sind. Version und Empfehlungsnummer sind ueberall offen und werden in der App sichtbar als [offen] gerendert - es wurden KEINE Nummern erfunden. Vor der Jury-Demo durch die aerztlichen Fachexperten pruefen und ergaenzen lassen. Bilder gehoeren nach assets/daily/images/.",
   "cases": [
     {
-      "id": "forrest-iia-antrumulkus",
-      "imageAsset": "assets/daily/images/forrest_iia_antrumulkus.jpg",
-      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
-      "region": "magen",
-      "topicId": "obere-gi-blutung",
-      "revealTitle": "Antrumulkus mit sichtbarem Gefäßstumpf — Forrest IIa",
-      "explanation": "Ösophagogastroduodenoskopie bei Hämatemesis vor sechs Stunden. An der kleinen Kurvatur im Antrum ein rund 15 mm messendes Ulkus mit fibrinbelegtem Grund. Zentral steht ein prominenter, nicht blutender Gefäßstumpf über das Niveau des Ulkusgrundes hinaus. Kein Frischblut, kein Koagel im Magen, keine sickernde Blutung unter Spülung.\n\nDamit liegt eine Läsion Forrest IIa vor. Entscheidend ist nicht, dass die Blutung steht, sondern dass ein Gefäß sichtbar ist: das Rezidivblutungsrisiko ist hier deutlich erhöht und rechtfertigt die endoskopische Intervention in derselben Sitzung. Nach der Hämostase folgt die hochdosierte PPI-Therapie, anschließend die Abklärung auf Helicobacter pylori sowie die Überprüfung der Indikation für NSAR und Thrombozytenaggregationshemmer.",
+      "id": "refluxoesophagitis-la-klassifikation",
+      "imageAsset": "assets/daily/images/oesophagitis_erosionen_distal.jpg",
+      "imageCredit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      },
+      "region": "oesophagus",
+      "topicId": "refluxkrankheit-barrett",
+      "revealTitle": "Schleimhautläsionen am ösophagogastralen Übergang",
+      "explanation": "Ösophagogastroduodenoskopie bei seit Monaten bestehendem Sodbrennen und retrosternalem Brennen im Liegen. Am distalen Ösophagus zeigen sich längs verlaufende, auf den Faltenkämmen gelegene Schleimhautläsionen mit fibrinbelegtem Grund, die vom ösophagogastralen Übergang nach proximal ziehen. Die umgebende Schleimhaut ist gerötet, ohne Ulzeration und ohne Stenose.\n\nFür die Befundung zählt nicht die Rötung, sondern der Schleimhautdefekt. Die Los-Angeles-Klassifikation stuft ausschliesslich sogenannte mucosal breaks ein, also umschriebene Defekte mit erkennbarer Begrenzung zur normalen Schleimhaut. Erythem, Ödem und eine vermehrte Gefässzeichnung allein reichen für keinen Grad aus; sie sind untersucherabhängig und schlecht reproduzierbar. Das ist der Grund, weshalb die Klassifikation genau diese Merkmale bewusst nicht verwendet.",
       "citation": {
-        "guideline": "S2k-Leitlinie Gastrointestinale Blutung (DGVS)",
+        "guideline": "S2k-Leitlinie Gastroösophageale Refluxkrankheit (DGVS)",
         "register": null,
         "version": null,
         "recommendation": null
       },
       "unverified": true,
       "quiz": {
-        "focus": "strategie",
-        "question": "Welches Vorgehen ist bei diesem Befund indiziert?",
-        "correctOptionId": "b",
-        "takeaway": "Bei Forrest IIa behandelt man den sichtbaren Gefäßstumpf, nicht die Blutung. Dass es gerade nicht blutet, senkt das Rezidivrisiko nicht.",
+        "focus": "befund",
+        "question": "Woran richtet sich die Einteilung dieses Befundes nach der Los-Angeles-Klassifikation?",
+        "correctOptionId": "c",
+        "takeaway": "Die LA-Klassifikation misst Schleimhautdefekte, nicht Rötung. Ausdehnung entlang der Falten und Zirkumferenz entscheiden — nicht die Farbe.",
         "options": [
           {
             "id": "a",
-            "label": "Keine endoskopische Therapie, alleinige PPI-Gabe und endoskopische Verlaufskontrolle",
-            "rationale": "Zu zurückhaltend. Der sichtbare Gefäßstumpf definiert eine Hochrisikoläsion; eine alleinige Säuresuppression lässt das Rezidivblutungsrisiko unbehandelt. Die PPI-Therapie ergänzt die Hämostase, sie ersetzt sie nicht."
+            "label": "Nach der Intensität der Rötung und der Gefässzeichnung der distalen Schleimhaut",
+            "rationale": "Falsch. Erythem und Gefässzeichnung sind zwischen Untersuchern schlecht reproduzierbar und gehen in die Klassifikation gerade deshalb nicht ein. Ein geröteter Ösophagus ohne Schleimhautdefekt erhält keinen LA-Grad."
           },
           {
             "id": "b",
-            "label": "Endoskopische Kombinationstherapie, anschließend hochdosierte PPI-Therapie",
-            "rationale": "Richtig. Bei Forrest IIa ist die endoskopische Hämostase in derselben Sitzung indiziert, und zwar als Kombination aus Unterspritzung und einem zweiten Verfahren — mechanisch mittels Clip oder thermisch. Die Monotherapie mit Adrenalin allein ist unterlegen. Im Anschluss hochdosierte PPI-Therapie, danach H.-pylori-Diagnostik."
+            "label": "Nach der Tiefe der Läsionen bis in die Submukosa",
+            "rationale": "Falsch. Die Tiefe ist endoskopisch nicht zuverlässig zu beurteilen und ist kein Kriterium der Klassifikation. Eine Läsion, die tatsächlich bis in die Submukosa reicht, wäre ein Ulkus und würde die Fragestellung ohnehin verschieben."
           },
           {
             "id": "c",
-            "label": "Sofortige chirurgische Umstechung",
-            "rationale": "Falsch in der Reihenfolge. Die Chirurgie ist bei endoskopisch nicht beherrschbarer oder rezidivierender Blutung indiziert, nicht als Primärmaßnahme bei einer endoskopisch gut erreichbaren Läsion."
+            "label": "Nach Länge und Konfluenz der Schleimhautläsionen und deren Anteil an der Zirkumferenz",
+            "rationale": "Richtig. Eingeteilt werden ausschliesslich Schleimhautdefekte: zunächst nach ihrer Länge, dann danach, ob sie zwischen zwei Faltenkuppen konfluieren, und schliesslich nach dem Anteil der Zirkumferenz, den sie einnehmen. Das sind reproduzierbare, messbare Merkmale — der Grund, weshalb sich diese Klassifikation gegenüber älteren durchgesetzt hat."
           },
           {
             "id": "d",
-            "label": "Primär angiographische Embolisation",
-            "rationale": "Falsch in der Reihenfolge. Die interventionelle Radiologie ist eine Rückfalloption nach frustraner endoskopischer Hämostase, insbesondere beim chirurgischen Hochrisikopatienten — nicht der erste Schritt."
+            "label": "Nach der Länge des Zylinderepithels oberhalb der Magenfalten",
+            "rationale": "Falsch, aber nicht beliebig: das ist die Vermessung eines Barrett-Segments nach den Prag-C-&-M-Kriterien. Sie beschreibt eine Metaplasie, nicht eine erosive Entzündung, und beantwortet eine andere Frage."
           }
         ]
       }
@@ -48,7 +51,10 @@
     {
       "id": "paris-iia-colon-ascendens",
       "imageAsset": "assets/daily/images/paris_iia_colon_ascendens.jpg",
-      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "imageCredit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      },
       "region": "kolon",
       "topicId": "kolorektale-vorsorge",
       "revealTitle": "Flach erhabene Läsion im Colon ascendens — Paris 0-IIa",
@@ -90,45 +96,48 @@
       }
     },
     {
-      "id": "oesophagusvarizen-red-colour-signs",
-      "imageAsset": "assets/daily/images/oesophagusvarizen_red_colour_signs.jpg",
-      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
-      "region": "oesophagus",
-      "topicId": "varizenblutung",
-      "revealTitle": "Ösophagusvarizen mit Red Colour Signs",
-      "explanation": "Patient mit bekannter äthyltoxischer Leberzirrhose, Aufnahme mit Hämatemesis und Meläna. Im distalen Ösophagus großkalibrige, konfluierende Varizenstränge, die sich mit Luftinsufflation nicht vollständig komprimieren lassen. Auf der Kuppe zweier Stränge längliche rote Zeichen im Sinne von Red Wale Marks.\n\nRed Colour Signs sind kein kosmetisches Detail, sondern der endoskopische Marker für ein hohes Blutungs- beziehungsweise Rezidivblutungsrisiko. Die akute Varizenblutung wird gleichzeitig auf drei Ebenen behandelt: endoskopische Ligatur als Verfahren der Wahl, vasoaktive Substanz zur Senkung des portalen Drucks, und Antibiotikaprophylaxe. Letztere wird im Alltag am häufigsten vergessen, obwohl sie sowohl die Infektionsrate als auch die Rezidivblutungsrate senkt.",
+      "id": "emr-lifting-kolonpolyp",
+      "imageAsset": "assets/daily/images/emr_lifting_kolonpolyp.jpg",
+      "imageCredit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      },
+      "region": "kolon",
+      "topicId": "kolorektale-vorsorge",
+      "revealTitle": "Vollständiges Lifting nach submuköser Injektion",
+      "explanation": "Vorsorgekoloskopie. Nach submuköser Injektion eines mit Indigokarmin angefärbten Volumens hebt sich die Läsion vollständig von der Unterlage ab; das blau gefärbte Polster unterfüttert sie flächig, die Ränder demarkieren sich scharf gegen die umgebende Schleimhaut.\n\nDie Injektion erfüllt hier zwei Zwecke gleichzeitig. Sie schafft den Sicherheitsabstand zur Muscularis propria, der die Resektion überhaupt erst vertretbar macht, und sie ist zugleich ein Test: eine Läsion, die sich trotz korrekt platzierter Injektion nicht abhebt, ist verdächtig auf eine tiefe Infiltration oder auf eine Vernarbung nach Voreingriff. Das Anfärben macht die Grenze zwischen Mukosa und Submukosa sichtbar und erleichtert am Ende die Kontrolle des Resektionsrandes.",
       "citation": {
-        "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
-        "register": null,
+        "guideline": "S3-Leitlinie Kolorektales Karzinom (DGVS)",
+        "register": "021-007OL",
         "version": null,
         "recommendation": null
       },
       "unverified": true,
       "quiz": {
         "focus": "strategie",
-        "question": "Wie behandeln Sie diese akute Varizenblutung?",
-        "correctOptionId": "c",
-        "takeaway": "Ligatur, vasoaktive Substanz und Antibiotikaprophylaxe gehören zusammen. Die Antibiotikagabe ist Bestandteil der Standardtherapie, nicht eine Ermessensentscheidung.",
+        "question": "Die Läsion hebt sich nach submuköser Injektion vollständig ab. Was folgt daraus?",
+        "correctOptionId": "b",
+        "takeaway": "Das Lifting ist Sicherheitsabstand und Test in einem. Fehlendes Anheben ist der Befund, der die Strategie ändert — nicht das gelungene.",
         "options": [
           {
             "id": "a",
-            "label": "Endoskopische Sklerosierung als Erstlinienverfahren",
-            "rationale": "Überholt. Die Sklerosierung ist der Ligatur bei Ösophagusvarizen hinsichtlich Komplikationen unterlegen und bleibt Situationen vorbehalten, in denen eine Ligatur technisch nicht durchführbar ist."
+            "label": "Der Befund ist damit als benigne gesichert; eine histologische Aufarbeitung erübrigt sich",
+            "rationale": "Falsch. Das Lifting sagt etwas über die Verschieblichkeit gegen die Submukosa aus, nicht über die Dignität. Jedes Resektat geht zur Histologie, und erst sie entscheidet über Nachsorge und etwaige Nachresektion."
           },
           {
             "id": "b",
-            "label": "Hochdosierte PPI-Therapie und Verlaufsendoskopie nach 24 Stunden",
-            "rationale": "Falsches Krankheitsmodell. Die Varizenblutung ist eine Folge der portalen Hypertension, nicht der Säure. Die PPI-Therapie behandelt hier nichts Ursächliches und ersetzt weder Ligatur noch vasoaktive Substanz."
+            "label": "Es besteht kein Hinweis auf tiefe Infiltration; die endoskopische Resektion kann fortgesetzt werden",
+            "rationale": "Richtig. Das vollständige Abheben spricht gegen eine Fixierung an tieferen Schichten und schafft das Polster, das die Resektion von der Muscularis propria distanziert. Die Technik richtet sich anschliessend nach Grösse und Morphologie der Läsion."
           },
           {
             "id": "c",
-            "label": "Endoskopische Ligatur, vasoaktive Substanz und Antibiotikaprophylaxe",
-            "rationale": "Richtig. Die drei Säulen greifen an unterschiedlichen Punkten an: die Ligatur an der blutenden Varize, die vasoaktive Substanz am portalen Druck, die Antibiotikaprophylaxe an der bakteriellen Translokation, die Rezidivblutung und Mortalität mit beeinflusst."
+            "label": "Es besteht die Indikation zur primären chirurgischen Resektion",
+            "rationale": "Falsch. Umgekehrt: gerade das fehlende Anheben wäre das Argument, endoskopisch abzubrechen und den Fall interdisziplinär vorzustellen. Ein gelungenes Lifting spricht für die endoskopische Fortsetzung."
           },
           {
             "id": "d",
-            "label": "Sofortige TIPS-Anlage bei allen Patienten mit Varizenblutung",
-            "rationale": "Zu weit gefasst. Der TIPS ist als Rescue-Verfahren bei nicht beherrschbarer Blutung etabliert und wird bei ausgewählten Hochrisikopatienten früh erwogen — aber nicht pauschal bei jeder Varizenblutung anstelle der endoskopischen Therapie."
+            "label": "Die Läsion sollte biopsiert und der Eingriff zur Planung beendet werden",
+            "rationale": "Falsch und praktisch nachteilig. Eine Zangenbiopsie kann eine Vernarbung erzeugen, die eine spätere Resektion erschwert, und liefert bei bereits unterspritzter, resezierbarer Läsion keinen Zugewinn."
           }
         ]
       }
@@ -136,7 +145,10 @@
     {
       "id": "colitis-ulcerosa-mayo-3",
       "imageAsset": "assets/daily/images/colitis_ulcerosa_mayo_3.jpg",
-      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "imageCredit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      },
       "region": "kolon",
       "topicId": "colitis-ulcerosa-aktivitaet",
       "revealTitle": "Kontinuierliche Entzündung ab dem Rektum — Mayo 3",
@@ -178,9 +190,200 @@
       }
     },
     {
+      "id": "z-linie-abgrenzung-barrett",
+      "imageAsset": "assets/daily/images/z_linie_uebergang.jpg",
+      "imageCredit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      },
+      "region": "oesophagus",
+      "topicId": "refluxkrankheit-barrett",
+      "revealTitle": "Der ösophagogastrale Übergang und seine zwei Bezugslinien",
+      "explanation": "Inversionsnahe Einstellung des distalen Ösophagus. Die Z-Linie, also die Grenze zwischen dem hellen Plattenepithel des Ösophagus und dem lachsfarbenen Zylinderepithel, ist zirkulär abgrenzbar.\n\nFür jede Aussage über ein Barrett-Segment braucht es zwei Linien, nicht eine. Die Z-Linie markiert den Epithelwechsel; der ösophagogastrale Übergang wird endoskopisch am proximalen Ende der Magenfalten festgelegt. Erst der Abstand zwischen beiden ist das, was vermessen und nach den Prag-C-&-M-Kriterien als zirkuläre und maximale Ausdehnung angegeben wird. Ohne die zweite Bezugslinie ist eine hoch stehende Z-Linie nicht von einer Hiatushernie zu unterscheiden, und genau diese Verwechslung erzeugt Barrett-Diagnosen, die keine sind.",
+      "citation": {
+        "guideline": "S2k-Leitlinie Gastroösophageale Refluxkrankheit (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "befund",
+        "question": "Wogegen wird die Z-Linie gemessen, wenn ein Barrett-Segment beschrieben werden soll?",
+        "correctOptionId": "a",
+        "takeaway": "Zwei Linien, nicht eine: Epithelgrenze gegen proximales Ende der Magenfalten. Ohne die zweite ist eine hohe Z-Linie nur eine hohe Z-Linie.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Gegen das proximale Ende der Magenfalten",
+            "rationale": "Richtig. Das proximale Ende der Magenfalten definiert endoskopisch den ösophagogastralen Übergang. Der Abstand von dort bis zur Z-Linie ist die Länge, die als zirkuläre und maximale Ausdehnung angegeben wird."
+          },
+          {
+            "id": "b",
+            "label": "Gegen den Hiatus, gemessen in der Inversion",
+            "rationale": "Falsch. Die Zwerchfellenge ist atem- und lageabhängig und wandert gegenüber dem Übergang. Sie beschreibt eine etwaige Hernie, nicht die Länge eines Barrett-Segments."
+          },
+          {
+            "id": "c",
+            "label": "Gegen die Zahnreihe, in Zentimetern ab Einführungsstelle",
+            "rationale": "Falsch als alleiniges Mass. Der Abstand ab Zahnreihe wird dokumentiert, hängt aber von Körpergrösse und Schlingenbildung des Geräts ab und ersetzt keine anatomische Bezugslinie."
+          },
+          {
+            "id": "d",
+            "label": "Gegen die Grenze zwischen Fundus und Korpus",
+            "rationale": "Falsch. Diese Grenze liegt distal des Übergangs und spielt für die Vermessung eines Barrett-Segments keine Rolle."
+          }
+        ]
+      }
+    },
+    {
+      "id": "zoekum-landmarken-vollstaendigkeit",
+      "imageAsset": "assets/daily/images/zoekum_landmarken.jpg",
+      "imageCredit": {
+        "source": "Kvasir v2 — Simula Research Laboratory / Vestre Viken HF",
+        "licence": "Forschung und Lehre · Beispielbild, nicht der dokumentierte Fall"
+      },
+      "region": "kolon",
+      "topicId": "kolorektale-vorsorge",
+      "revealTitle": "Zökalpol — was die vollständige Koloskopie belegt",
+      "explanation": "Vorsorgekoloskopie, Einstellung des Zökalpols. Erkennbar sind der Zusammenlauf der Taenien und die Landmarken des Zökums.\n\nDie Vollständigkeit einer Koloskopie ist ein Qualitätsindikator und keine Formulierung im Befundtext. Sie gilt als belegt, wenn die Zökalpolregion erreicht und fotodokumentiert ist — anhand von Ileozökalklappe und Appendixostium, alternativ durch Intubation des terminalen Ileums. Ein Bild, auf dem nur weite Haustren zu sehen sind, belegt nichts: das Colon ascendens sieht dem Zökum in der Übersicht ähnlich genug, dass die Verwechslung regelmässig vorkommt. Sie ist der häufigste Grund für eine als vollständig dokumentierte, tatsächlich unvollständige Untersuchung.",
+      "citation": {
+        "guideline": "S3-Leitlinie Kolorektales Karzinom (DGVS)",
+        "register": "021-007OL",
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "befund",
+        "question": "Was belegt endoskopisch, dass das Zökum erreicht wurde?",
+        "correctOptionId": "d",
+        "takeaway": "Vollständigkeit wird bewiesen, nicht behauptet: Ileozökalklappe und Appendixostium im Bild, oder das terminale Ileum.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Die eingeführte Gerätelänge von mehr als 80 cm",
+            "rationale": "Falsch. Die Gerätelänge hängt von Schlingenbildung und Anatomie ab und ist kein Nachweis der erreichten Höhe. Ein gestrecktes Kolon kann bei deutlich geringerer Länge erreicht sein."
+          },
+          {
+            "id": "b",
+            "label": "Der Wechsel zu weiten, dreieckigen Haustren",
+            "rationale": "Falsch. Weite Haustren finden sich auch im Colon ascendens. Genau diese Ähnlichkeit erzeugt die Fehleinschätzung, die der Nachweis über die Landmarken verhindern soll."
+          },
+          {
+            "id": "c",
+            "label": "Das Durchleuchten der Bauchdecke im rechten Unterbauch",
+            "rationale": "Falsch als Beleg. Die Diaphanoskopie kann orientierend helfen, ist aber von Bauchdecke und Beleuchtung abhängig und nicht dokumentierbar im Sinne des Qualitätsindikators."
+          },
+          {
+            "id": "d",
+            "label": "Die Fotodokumentation von Ileozökalklappe und Appendixostium oder die Intubation des terminalen Ileums",
+            "rationale": "Richtig. Diese Landmarken sind eindeutig, im Bild festhaltbar und nachträglich überprüfbar. Deshalb ist die Fotodokumentation und nicht die Formulierung im Befund der Beleg."
+          }
+        ]
+      }
+    },
+    {
+      "id": "forrest-iia-antrumulkus",
+      "imageAsset": "assets/daily/images/forrest_iia_antrumulkus.jpg",
+      "imageCredit": {
+        "source": "Lehrsammlung [offen]",
+        "licence": "Platzhalter"
+      },
+      "region": "magen",
+      "topicId": "obere-gi-blutung",
+      "revealTitle": "Antrumulkus mit sichtbarem Gefäßstumpf — Forrest IIa",
+      "explanation": "Ösophagogastroduodenoskopie bei Hämatemesis vor sechs Stunden. An der kleinen Kurvatur im Antrum ein rund 15 mm messendes Ulkus mit fibrinbelegtem Grund. Zentral steht ein prominenter, nicht blutender Gefäßstumpf über das Niveau des Ulkusgrundes hinaus. Kein Frischblut, kein Koagel im Magen, keine sickernde Blutung unter Spülung.\n\nDamit liegt eine Läsion Forrest IIa vor. Entscheidend ist nicht, dass die Blutung steht, sondern dass ein Gefäß sichtbar ist: das Rezidivblutungsrisiko ist hier deutlich erhöht und rechtfertigt die endoskopische Intervention in derselben Sitzung. Nach der Hämostase folgt die hochdosierte PPI-Therapie, anschließend die Abklärung auf Helicobacter pylori sowie die Überprüfung der Indikation für NSAR und Thrombozytenaggregationshemmer.",
+      "citation": {
+        "guideline": "S2k-Leitlinie Gastrointestinale Blutung (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "strategie",
+        "question": "Welches Vorgehen ist bei diesem Befund indiziert?",
+        "correctOptionId": "b",
+        "takeaway": "Bei Forrest IIa behandelt man den sichtbaren Gefäßstumpf, nicht die Blutung. Dass es gerade nicht blutet, senkt das Rezidivrisiko nicht.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Keine endoskopische Therapie, alleinige PPI-Gabe und endoskopische Verlaufskontrolle",
+            "rationale": "Zu zurückhaltend. Der sichtbare Gefäßstumpf definiert eine Hochrisikoläsion; eine alleinige Säuresuppression lässt das Rezidivblutungsrisiko unbehandelt. Die PPI-Therapie ergänzt die Hämostase, sie ersetzt sie nicht."
+          },
+          {
+            "id": "b",
+            "label": "Endoskopische Kombinationstherapie, anschließend hochdosierte PPI-Therapie",
+            "rationale": "Richtig. Bei Forrest IIa ist die endoskopische Hämostase in derselben Sitzung indiziert, und zwar als Kombination aus Unterspritzung und einem zweiten Verfahren — mechanisch mittels Clip oder thermisch. Die Monotherapie mit Adrenalin allein ist unterlegen. Im Anschluss hochdosierte PPI-Therapie, danach H.-pylori-Diagnostik."
+          },
+          {
+            "id": "c",
+            "label": "Sofortige chirurgische Umstechung",
+            "rationale": "Falsch in der Reihenfolge. Die Chirurgie ist bei endoskopisch nicht beherrschbarer oder rezidivierender Blutung indiziert, nicht als Primärmaßnahme bei einer endoskopisch gut erreichbaren Läsion."
+          },
+          {
+            "id": "d",
+            "label": "Primär angiographische Embolisation",
+            "rationale": "Falsch in der Reihenfolge. Die interventionelle Radiologie ist eine Rückfalloption nach frustraner endoskopischer Hämostase, insbesondere beim chirurgischen Hochrisikopatienten — nicht der erste Schritt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesophagusvarizen-red-colour-signs",
+      "imageAsset": "assets/daily/images/oesophagusvarizen_red_colour_signs.jpg",
+      "imageCredit": {
+        "source": "Lehrsammlung [offen]",
+        "licence": "Platzhalter"
+      },
+      "region": "oesophagus",
+      "topicId": "varizenblutung",
+      "revealTitle": "Ösophagusvarizen mit Red Colour Signs",
+      "explanation": "Patient mit bekannter äthyltoxischer Leberzirrhose, Aufnahme mit Hämatemesis und Meläna. Im distalen Ösophagus großkalibrige, konfluierende Varizenstränge, die sich mit Luftinsufflation nicht vollständig komprimieren lassen. Auf der Kuppe zweier Stränge längliche rote Zeichen im Sinne von Red Wale Marks.\n\nRed Colour Signs sind kein kosmetisches Detail, sondern der endoskopische Marker für ein hohes Blutungs- beziehungsweise Rezidivblutungsrisiko. Die akute Varizenblutung wird gleichzeitig auf drei Ebenen behandelt: endoskopische Ligatur als Verfahren der Wahl, vasoaktive Substanz zur Senkung des portalen Drucks, und Antibiotikaprophylaxe. Letztere wird im Alltag am häufigsten vergessen, obwohl sie sowohl die Infektionsrate als auch die Rezidivblutungsrate senkt.",
+      "citation": {
+        "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "strategie",
+        "question": "Wie behandeln Sie diese akute Varizenblutung?",
+        "correctOptionId": "c",
+        "takeaway": "Ligatur, vasoaktive Substanz und Antibiotikaprophylaxe gehören zusammen. Die Antibiotikagabe ist Bestandteil der Standardtherapie, nicht eine Ermessensentscheidung.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Endoskopische Sklerosierung als Erstlinienverfahren",
+            "rationale": "Überholt. Die Sklerosierung ist der Ligatur bei Ösophagusvarizen hinsichtlich Komplikationen unterlegen und bleibt Situationen vorbehalten, in denen eine Ligatur technisch nicht durchführbar ist."
+          },
+          {
+            "id": "b",
+            "label": "Hochdosierte PPI-Therapie und Verlaufsendoskopie nach 24 Stunden",
+            "rationale": "Falsches Krankheitsmodell. Die Varizenblutung ist eine Folge der portalen Hypertension, nicht der Säure. Die PPI-Therapie behandelt hier nichts Ursächliches und ersetzt weder Ligatur noch vasoaktive Substanz."
+          },
+          {
+            "id": "c",
+            "label": "Endoskopische Ligatur, vasoaktive Substanz und Antibiotikaprophylaxe",
+            "rationale": "Richtig. Die drei Säulen greifen an unterschiedlichen Punkten an: die Ligatur an der blutenden Varize, die vasoaktive Substanz am portalen Druck, die Antibiotikaprophylaxe an der bakteriellen Translokation, die Rezidivblutung und Mortalität mit beeinflusst."
+          },
+          {
+            "id": "d",
+            "label": "Sofortige TIPS-Anlage bei allen Patienten mit Varizenblutung",
+            "rationale": "Zu weit gefasst. Der TIPS ist als Rescue-Verfahren bei nicht beherrschbarer Blutung etabliert und wird bei ausgewählten Hochrisikopatienten früh erwogen — aber nicht pauschal bei jeder Varizenblutung anstelle der endoskopischen Therapie."
+          }
+        ]
+      }
+    },
+    {
       "id": "duodenum-scalloping-zoeliakie",
       "imageAsset": "assets/daily/images/duodenum_scalloping_zoeliakie.jpg",
-      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "imageCredit": {
+        "source": "Lehrsammlung [offen]",
+        "licence": "Platzhalter"
+      },
       "region": "duodenum",
       "topicId": "zoeliakie-diagnostik",
       "revealTitle": "Faltenverlust und Scalloping im Duodenum — Verdacht auf Zöliakie",

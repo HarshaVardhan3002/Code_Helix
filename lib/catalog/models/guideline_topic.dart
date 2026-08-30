@@ -14,6 +14,7 @@ class TopicSection extends Equatable {
     required this.heading,
     required this.body,
     required this.citation,
+    this.quote,
   });
 
   /// Builds a [TopicSection] from decoded JSON.
@@ -23,6 +24,7 @@ class TopicSection extends Equatable {
     citation: GuidelineCitation.fromJson(
       json['citation'] as Map<String, dynamic>,
     ),
+    quote: json['quote'] as String?,
   );
 
   /// The section heading.
@@ -34,8 +36,16 @@ class TopicSection extends Equatable {
   /// {@macro guideline_citation}
   final GuidelineCitation citation;
 
+  /// The guideline's own words, where the section rests on one passage.
+  ///
+  /// Set apart from [body] because it is quoted rather than written: [body] is
+  /// the app explaining a recommendation, this is the recommendation. Rendered
+  /// in the serif for exactly that reason. Null where the section paraphrases
+  /// several recommendations and no single sentence carries it.
+  final String? quote;
+
   @override
-  List<Object?> get props => [heading, body, citation];
+  List<Object?> get props => [heading, body, citation, quote];
 }
 
 /// {@template guideline_topic}

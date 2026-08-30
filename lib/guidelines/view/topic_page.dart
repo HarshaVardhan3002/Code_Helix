@@ -28,16 +28,16 @@ class TopicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: context.gi.base,
       body: SurfaceBackground(
         child: BlocBuilder<CatalogCubit, CatalogState>(
           builder: (context, state) {
             final topic = state.catalog.topicById(topicId);
             if (topic == null) {
-              return const Center(
+              return Center(
                 child: Text(
                   'Thema nicht gefunden.',
-                  style: TextStyle(color: AppColors.white),
+                  style: TextStyle(color: context.gi.textPrimary),
                 ),
               );
             }
@@ -71,7 +71,7 @@ class TopicPage extends StatelessWidget {
                     Text(
                       topic.title,
                       style: context.headlineSmall?.copyWith(
-                        color: AppColors.white,
+                        color: context.gi.textPrimary,
                         height: 1.2,
                         fontWeight: AppFontWeight.semiBold,
                         letterSpacing: -0.4,
@@ -81,7 +81,7 @@ class TopicPage extends StatelessWidget {
                     Text(
                       topic.summary,
                       style: context.bodyMedium?.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.62),
+                        color: context.gi.textSecondary,
                         height: 1.45,
                       ),
                     ),
@@ -117,7 +117,7 @@ class _Section extends StatelessWidget {
         Text(
           section.heading,
           style: context.titleSmall?.copyWith(
-            color: AppColors.white,
+            color: context.gi.textPrimary,
             height: 1.3,
             fontWeight: AppFontWeight.semiBold,
           ),
@@ -126,13 +126,56 @@ class _Section extends StatelessWidget {
         Text(
           section.body,
           style: context.bodyMedium?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.86),
+            color: context.gi.textPrimary,
             height: 1.54,
           ),
         ),
+        if (section.quote != null) ...[
+          const SizedBox(height: AppSpacing.md),
+          _GuidelineQuote(text: section.quote!),
+        ],
         const SizedBox(height: AppSpacing.md),
         CitationBlock(citation: section.citation),
       ],
+    );
+  }
+}
+
+/// The guideline's own words, set apart from the app's.
+///
+/// Newsreader and a rule down the left edge. This is the second of exactly
+/// three places the serif appears, and it is the whole reason the app can
+/// claim its answer key is the society's rather than its own: the reader can
+/// see where the app stops talking and the guideline starts.
+class _GuidelineQuote extends StatelessWidget {
+  const _GuidelineQuote({required this.text});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final gi = context.gi;
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.lg,
+        AppSpacing.md,
+        AppSpacing.md,
+        AppSpacing.md,
+      ),
+      decoration: BoxDecoration(
+        color: gi.fill,
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(AppSpacing.md),
+          bottomRight: Radius.circular(AppSpacing.md),
+        ),
+        border: Border(left: BorderSide(color: gi.action, width: 2.5)),
+      ),
+      child: Text(
+        text,
+        style: GiSerif.quotation.copyWith(color: gi.textPrimary),
+      ),
     );
   }
 }
@@ -152,12 +195,12 @@ class _TestMe extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(height: 1, color: AppColors.white.withValues(alpha: 0.1)),
+        Container(height: 1, color: context.gi.hairline),
         const SizedBox(height: AppSpacing.xlg),
         Text(
           'Teste mich dazu',
           style: context.titleSmall?.copyWith(
-            color: AppColors.white,
+            color: context.gi.textPrimary,
             fontWeight: AppFontWeight.semiBold,
           ),
         ),
@@ -166,7 +209,7 @@ class _TestMe extends StatelessWidget {
           '${cases.length} ${cases.length == 1 ? 'Fall' : 'Fälle'} '
           'zu diesem Thema.',
           style: context.bodySmall?.copyWith(
-            color: AppColors.white.withValues(alpha: 0.55),
+            color: context.gi.textSecondary,
           ),
         ),
         const SizedBox(height: AppSpacing.md),
@@ -186,7 +229,7 @@ class _TestMe extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppSpacing.lg),
                 border: Border.all(
-                  color: AppColors.white.withValues(alpha: 0.18),
+                  color: context.gi.hairline,
                 ),
               ),
               child: Row(
@@ -197,7 +240,7 @@ class _TestMe extends StatelessWidget {
                       // here would defeat the exercise before it starts.
                       entry.quiz.question,
                       style: context.bodyMedium?.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.88),
+                        color: context.gi.textPrimary,
                         height: 1.35,
                       ),
                     ),
@@ -206,7 +249,7 @@ class _TestMe extends StatelessWidget {
                   Icon(
                     Icons.arrow_forward_rounded,
                     size: 16,
-                    color: AppColors.white.withValues(alpha: 0.5),
+                    color: context.gi.textSecondary,
                   ),
                 ],
               ),
@@ -232,13 +275,13 @@ class _BackButton extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Tappable.scaled(
             onTap: Navigator.of(context).pop,
-            child: const GlassSurface(
+            child: GlassSurface(
               level: GlassLevel.chip,
-              padding: EdgeInsets.all(AppSpacing.sm),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               child: Icon(
                 Icons.arrow_back_rounded,
                 size: 18,
-                color: AppColors.white,
+                color: context.gi.textPrimary,
               ),
             ),
           ),
