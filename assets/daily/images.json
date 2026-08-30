@@ -1,0 +1,47 @@
+{
+  "_readme": "Die Bildbibliothek, aus der Autor:innen einen Fall bauen. Es gibt bewusst KEINEN Upload: ein eigenes Endoskopiebild hochzuladen heisst Patientendaten hochzuladen, und eine Einwilligungsstrecke wird nicht improvisiert. Labels sind absichtlich neutral und nennen keine Diagnose - sonst bekommt die Autorin die Antwort auf den Fall geschenkt, den sie gerade schreibt. Alle Eintraege sind Platzhalter, bis lizenzierte Lehrsammlungsbilder in assets/daily/images/ liegen.",
+  "images": [
+    {
+      "id": "img-antrum-uebersicht",
+      "asset": "assets/daily/images/forrest_iia_antrumulkus.jpg",
+      "label": "Antrum, Übersicht",
+      "region": "magen",
+      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+    },
+    {
+      "id": "img-oesophagus-distal",
+      "asset": "assets/daily/images/oesophagusvarizen_red_colour_signs.jpg",
+      "label": "Distaler Ösophagus, Inversion",
+      "region": "oesophagus",
+      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+    },
+    {
+      "id": "img-colon-ascendens",
+      "asset": "assets/daily/images/paris_iia_colon_ascendens.jpg",
+      "label": "Colon ascendens, Nahfokus",
+      "region": "kolon",
+      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+    },
+    {
+      "id": "img-rektosigmoid",
+      "asset": "assets/daily/images/colitis_ulcerosa_mayo_3.jpg",
+      "label": "Rektosigmoid, Übersicht",
+      "region": "kolon",
+      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+    },
+    {
+      "id": "img-duodenum-pars-descendens",
+      "asset": "assets/daily/images/duodenum_scalloping_zoeliakie.jpg",
+      "label": "Pars descendens duodeni",
+      "region": "duodenum",
+      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+    },
+    {
+      "id": "img-terminales-ileum",
+      "asset": "assets/daily/images/terminales_ileum.jpg",
+      "label": "Terminales Ileum, Übersicht",
+      "region": "duodenum",
+      "credit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" }
+    }
+  ]
+}

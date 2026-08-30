@@ -1,0 +1,281 @@
+{
+  "_readme": "PLATZHALTER-INHALTE fuer die Bibliothek. Fachlich nicht geprueft. AWMF-Registernummern nur dort gesetzt, wo sie belastbar sind; Version und Empfehlungsnummer sind ueberall offen und werden sichtbar als [offen] gerendert. Es wurden keine Nummern erfunden. Zitate bleiben kurz - das Urheberrecht an den Leitlinientexten liegt beim AWMF-Autorenkollektiv.",
+  "topics": [
+    {
+      "id": "kolorektale-vorsorge",
+      "title": "Kolorektale Vorsorge & Polypektomie",
+      "region": "kolon",
+      "summary": "Morphologie vor Technik: wie die Paris-Klassifikation die Resektion bestimmt.",
+      "unverified": true,
+      "caseIds": ["paris-iia-colon-ascendens"],
+      "citation": {
+        "guideline": "S3-Leitlinie Kolorektales Karzinom",
+        "register": "021-007OL",
+        "version": null,
+        "recommendation": null
+      },
+      "sections": [
+        {
+          "heading": "Warum die Morphologie zuerst kommt",
+          "body": "Die endoskopische Einordnung nach der Paris-Klassifikation steht vor der Resektionsentscheidung, nicht danach. Sie trennt gestielte von flach erhabenen und von exkavierten Läsionen und bestimmt damit unmittelbar die Technik: Schlingenabtragung, Mukosaresektion oder Zuweisung zur Submukosadissektion. Eine exkavierte Läsion verschiebt die Fragestellung von der Resektion zur Stadieneinteilung.",
+          "citation": {
+            "guideline": "S3-Leitlinie Kolorektales Karzinom",
+            "register": "021-007OL",
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "En bloc oder piecemeal",
+          "body": "Die vollständige Resektion in einem Stück erhält die Beurteilbarkeit der Ränder und der Invasionstiefe. Bei Läsionen, die Areale mit Verdacht auf tiefe submuköse Invasion tragen, ist die stückweise Abtragung nachteilig, weil sie genau die Information zerstört, die über das weitere Vorgehen entscheidet. Diese Areale werden vor der Resektion gesucht, nicht danach.",
+          "citation": {
+            "guideline": "S3-Leitlinie Kolorektales Karzinom",
+            "register": "021-007OL",
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Qualität der Untersuchung",
+          "body": "Adenomdetektionsrate, Zökumerreichungsrate und Rückzugszeit sind die Kenngrößen, an denen die Vorsorgekoloskopie gemessen wird. Sie sind keine Statistik für die Abteilung, sondern der Grund, warum ein Intervallkarzinom entsteht oder nicht. Eine unzureichende Vorbereitung verkürzt das Kontrollintervall.",
+          "citation": {
+            "guideline": "S3-Leitlinie Kolorektales Karzinom",
+            "register": "021-007OL",
+            "version": null,
+            "recommendation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "colitis-ulcerosa-aktivitaet",
+      "title": "Colitis ulcerosa: Aktivität & Eskalation",
+      "region": "kolon",
+      "summary": "Was den endoskopischen Mayo-Score bestimmt und warum er Therapieentscheidungen trägt.",
+      "unverified": true,
+      "caseIds": ["colitis-ulcerosa-mayo-3"],
+      "citation": {
+        "guideline": "S3-Leitlinie Colitis ulcerosa",
+        "register": "021-009",
+        "version": null,
+        "recommendation": null
+      },
+      "sections": [
+        {
+          "heading": "Befallsmuster als erstes Kriterium",
+          "body": "Die Colitis ulcerosa befällt das Rektum und steigt kontinuierlich auf. Ein diskontinuierlicher Befall mit Skip Lesions, aphthoiden Läsionen oder Ileumbeteiligung spricht gegen sie und für einen Morbus Crohn. Das Verteilungsmuster wird dokumentiert, bevor über die Aktivität gesprochen wird.",
+          "citation": {
+            "guideline": "S3-Leitlinie Colitis ulcerosa",
+            "register": "021-009",
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Der endoskopische Mayo-Subscore",
+          "body": "Die Abstufung folgt der Gefäßzeichnung, der Vulnerabilität und dem Vorliegen von Ulzerationen. Der häufigste Fehler im Alltag ist die Verwechslung von Kontaktblutung mit spontaner Blutung: Kontaktblutung und Erosionen bleiben Grad 2, spontane Blutung zusammen mit Ulzerationen ist Grad 3. Der Unterschied ist keine Feinheit, er geht direkt in die Eskalationsentscheidung ein.",
+          "citation": {
+            "guideline": "S3-Leitlinie Colitis ulcerosa",
+            "register": "021-009",
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Endoskopie ersetzt die Histologie nicht",
+          "body": "Stufenbiopsien aus allen Segmenten gehören zur Erstdiagnostik, sowohl zur Sicherung als auch zur Abgrenzung gegenüber einer infektiösen Kolitis. Die endoskopische Aktivitätsbeurteilung und die histologische Beurteilung beantworten unterschiedliche Fragen und werden nicht gegeneinander ausgetauscht.",
+          "citation": {
+            "guideline": "S3-Leitlinie Colitis ulcerosa",
+            "register": "021-009",
+            "version": null,
+            "recommendation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "obere-gi-blutung",
+      "title": "Obere GI-Blutung: Forrest & Hämostase",
+      "region": "magen",
+      "summary": "Warum der sichtbare Gefäßstumpf behandelt wird, auch wenn nichts blutet.",
+      "unverified": true,
+      "caseIds": ["forrest-iia-antrumulkus"],
+      "citation": {
+        "guideline": "S2k-Leitlinie Gastrointestinale Blutung (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "sections": [
+        {
+          "heading": "Die Forrest-Klassifikation beschreibt Risiko, nicht Aktivität",
+          "body": "Die Einteilung trennt aktive Blutung, Blutungsstigmata und den blanden Ulkusgrund. Ihr Zweck ist die Vorhersage der Rezidivblutung. Deshalb ist eine Läsion mit sichtbarem Gefäßstumpf behandlungsbedürftig, obwohl sie im Moment der Untersuchung nicht blutet.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Gastrointestinale Blutung (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Kombination statt Monotherapie",
+          "body": "Die alleinige Unterspritzung mit Adrenalin ist der Kombination aus Injektion und einem zweiten Verfahren — mechanisch mittels Clip oder thermisch — unterlegen. Die hochdosierte PPI-Therapie schließt sich an die Hämostase an und ersetzt sie nicht.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Gastrointestinale Blutung (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Nach der Blutung ist vor der Ursache",
+          "body": "Zur Behandlung gehört die Abklärung auf Helicobacter pylori und die Überprüfung der Indikation für NSAR und Thrombozytenaggregationshemmer. Ohne diesen Schritt ist die Blutung gestillt und das Rezidiv vorbereitet.",
+          "citation": {
+            "guideline": "S3-Leitlinie Helicobacter pylori und gastroduodenale Ulkuskrankheit",
+            "register": "021-001",
+            "version": null,
+            "recommendation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "varizenblutung",
+      "title": "Portale Hypertension: Varizenblutung",
+      "region": "oesophagus",
+      "summary": "Drei Säulen gleichzeitig — und die eine, die am häufigsten vergessen wird.",
+      "unverified": true,
+      "caseIds": ["oesophagusvarizen-red-colour-signs"],
+      "citation": {
+        "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "sections": [
+        {
+          "heading": "Red Colour Signs sind ein Risikomarker",
+          "body": "Längliche rote Zeichen auf der Kuppe eines Varizenstrangs markieren eine erhöhte Wandspannung und damit ein erhöhtes Blutungs- beziehungsweise Rezidivblutungsrisiko. Sie werden dokumentiert, weil sie in die Entscheidung über die Prophylaxe eingehen.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Ligatur, vasoaktive Substanz, Antibiotikaprophylaxe",
+          "body": "Die drei Maßnahmen greifen an unterschiedlichen Punkten an: an der blutenden Varize, am portalen Druck und an der bakteriellen Translokation. Die Antibiotikaprophylaxe ist Bestandteil der Standardtherapie und keine Ermessensentscheidung; sie senkt Infektions- und Rezidivblutungsrate.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "TIPS: Rescue und früher Einsatz",
+          "body": "Der TIPS ist bei endoskopisch nicht beherrschbarer Blutung etabliert und wird bei ausgewählten Hochrisikopatienten früh erwogen. Er ist keine pauschale Alternative zur endoskopischen Therapie bei jeder Varizenblutung.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "zoeliakie-diagnostik",
+      "title": "Zöliakie: Diagnostik",
+      "region": "duodenum",
+      "summary": "Warum das endoskopische Bild allein weder ausschließt noch beweist.",
+      "unverified": true,
+      "caseIds": ["duodenum-scalloping-zoeliakie"],
+      "citation": {
+        "guideline": "S2k-Leitlinie Zöliakie (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "sections": [
+        {
+          "heading": "Endoskopische Zeichen sind Hinweise",
+          "body": "Faltenverlust, gekerbter Faltenrand und Mosaikmuster passen zur Zottenatrophie, sind aber weder beweisend noch obligat. Eine endoskopisch unauffällige Duodenalschleimhaut schließt eine Zöliakie ausdrücklich nicht aus.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Zöliakie (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Serologie und Biopsie unter glutenhaltiger Kost",
+          "body": "Beide Befunde sind nur unter glutenhaltiger Ernährung verwertbar. Eine bereits begonnene glutenfreie Diät ist der häufigste Grund für eine unklare Diagnostik und macht die Abklärung erheblich aufwendiger.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Zöliakie (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Wo biopsiert wird",
+          "body": "Biopsien werden aus dem Bulbus duodeni und aus der Pars descendens entnommen, weil der Befall fleckförmig sein kann. Eine einzelne Entnahmestelle riskiert einen falsch negativen Befund.",
+          "citation": {
+            "guideline": "S2k-Leitlinie Zöliakie (DGVS)",
+            "register": null,
+            "version": null,
+            "recommendation": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "morbus-crohn-befall",
+      "title": "Morbus Crohn: Befallsmuster",
+      "region": "duodenum",
+      "summary": "Diskontinuität, Ileum und was die Abgrenzung zur Colitis ulcerosa trägt.",
+      "unverified": true,
+      "caseIds": [],
+      "citation": {
+        "guideline": "S3-Leitlinie Morbus Crohn",
+        "register": "021-004",
+        "version": null,
+        "recommendation": null
+      },
+      "sections": [
+        {
+          "heading": "Diskontinuierlich und transmural",
+          "body": "Der Morbus Crohn kann den gesamten Gastrointestinaltrakt befallen, typischerweise diskontinuierlich mit Skip Lesions. Aphthoide Läsionen, längsgerichtete Ulzerationen und ein Pflastersteinrelief sind die endoskopischen Leitbefunde.",
+          "citation": {
+            "guideline": "S3-Leitlinie Morbus Crohn",
+            "register": "021-004",
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Das terminale Ileum gehört dazu",
+          "body": "Die Ileoskopie ist Bestandteil der Erstdiagnostik. Ein isolierter Ileumbefall bei ausgespartem Rektum ist mit einer Colitis ulcerosa nicht vereinbar und verschiebt die Diagnose.",
+          "citation": {
+            "guideline": "S3-Leitlinie Morbus Crohn",
+            "register": "021-004",
+            "version": null,
+            "recommendation": null
+          }
+        },
+        {
+          "heading": "Abgrenzung ist eine Zusammenschau",
+          "body": "Endoskopie, Histologie, Bildgebung und Klinik werden gemeinsam bewertet. Ein einzelner Befund entscheidet die Zuordnung nicht, und ein Teil der Fälle bleibt zunächst als Colitis indeterminata offen.",
+          "citation": {
+            "guideline": "S3-Leitlinie Morbus Crohn",
+            "register": "021-004",
+            "version": null,
+            "recommendation": null
+          }
+        }
+      ]
+    }
+  ]
+}

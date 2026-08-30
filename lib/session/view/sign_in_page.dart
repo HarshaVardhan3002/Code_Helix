@@ -1,0 +1,213 @@
+import 'package:app_ui/app_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_instagram_offline_first_clone/session/bloc/session_cubit.dart';
+import 'package:flutter_instagram_offline_first_clone/session/models/session_user.dart';
+
+/// {@template sign_in_page}
+/// The account list.
+///
+/// Three seeded accounts, one tap each. No password field, no validation, no
+/// reset flow — none of that appears in a ten-minute demo, and building it
+/// would buy nothing.
+///
+/// What it does buy: the role switch becomes a visible, deliberate act on
+/// stage. The jury sees a physician sign in, submit a case, and an editor sign
+/// in and approve it, rather than a debug toggle flipping somewhere.
+/// {@endtemplate}
+class SignInPage extends StatelessWidget {
+  /// {@macro sign_in_page}
+  const SignInPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.black,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Glass takes its appearance from what is behind it, so a flat
+          // background would render the cards as nothing at all. The gradient
+          // is what the surfaces refract.
+          const DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: RadialGradient(
+                center: Alignment(-0.5, -0.7),
+                radius: 1.3,
+                colors: [
+                  Color(0xFF3B2A2E),
+                  Color(0xFF141821),
+                  Color(0xFF07090C),
+                ],
+                stops: [0, 0.5, 1],
+              ),
+            ),
+          ),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Spacer(flex: 2),
+                  const Center(
+                    child: AppLogo(
+                      width: 148,
+                      height: 42,
+                      color: AppColors.white,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  Text(
+                    'Täglich ein Fall aus den Leitlinien.',
+                    textAlign: TextAlign.center,
+                    style: context.bodyMedium?.copyWith(
+                      color: AppColors.white.withValues(alpha: 0.6),
+                    ),
+                  ),
+                  const Spacer(flex: 3),
+                  Text(
+                    'DEMO-ZUGÄNGE',
+                    style: context.labelSmall?.copyWith(
+                      color: AppColors.white.withValues(alpha: 0.45),
+                      letterSpacing: 1.6,
+                      fontSize: 10,
+                      fontWeight: AppFontWeight.semiBold,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  for (final account in DemoAccounts.all) ...[
+                    _AccountCard(account: account),
+                    const SizedBox(height: AppSpacing.sm),
+                  ],
+                  const Spacer(flex: 2),
+                  Text(
+                    'Prototyp. Fiktive Konten, keine Passwörter. '
+                    'Es werden keine Daten an einen Server gesendet.',
+                    textAlign: TextAlign.center,
+                    style: context.labelSmall?.copyWith(
+                      color: AppColors.white.withValues(alpha: 0.35),
+                      height: 1.45,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _AccountCard extends StatelessWidget {
+  const _AccountCard({required this.account});
+
+  final SessionUser account;
+
+  @override
+  Widget build(BuildContext context) {
+    return Tappable.scaled(
+      onTap: () => context.read<SessionCubit>().signIn(account),
+      child: GlassSurface(
+        level: GlassLevel.rail,
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.md,
+        ),
+        child: Row(
+          children: [
+            _Initial(letter: account.initials),
+            const SizedBox(width: AppSpacing.md),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    account.name,
+                    style: context.titleSmall?.copyWith(
+                      color: AppColors.white,
+                      fontWeight: AppFontWeight.semiBold,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    account.affiliation,
+                    style: context.labelSmall?.copyWith(
+                      color: AppColors.white.withValues(alpha: 0.55),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: AppSpacing.sm),
+            RoleChip(role: account.role),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Initial extends StatelessWidget {
+  const _Initial({required this.letter});
+
+  final String letter;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 38,
+      height: 38,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: AppColors.white.withValues(alpha: 0.09),
+        border: Border.all(color: AppColors.white.withValues(alpha: 0.18)),
+      ),
+      child: Text(
+        letter,
+        style: context.titleSmall?.copyWith(
+          color: AppColors.white.withValues(alpha: 0.85),
+          fontWeight: AppFontWeight.semiBold,
+        ),
+      ),
+    );
+  }
+}
+
+/// {@template role_chip}
+/// The small label naming a role.
+/// {@endtemplate}
+class RoleChip extends StatelessWidget {
+  /// {@macro role_chip}
+  const RoleChip({required this.role, super.key});
+
+  /// {@macro user_role}
+  final UserRole role;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.xxs + 1,
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.white.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
+        border: Border.all(color: AppColors.white.withValues(alpha: 0.16)),
+      ),
+      child: Text(
+        role.label.toUpperCase(),
+        style: context.labelSmall?.copyWith(
+          color: AppColors.white.withValues(alpha: 0.75),
+          letterSpacing: 1,
+          fontSize: 9.5,
+          fontWeight: AppFontWeight.semiBold,
+        ),
+      ),
+    );
+  }
+}

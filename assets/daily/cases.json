@@ -1,0 +1,225 @@
+{
+  "_readme": "PLATZHALTER-INHALTE. Fachlich nicht geprueft. Reihenfolge IST der Kalender: Index 0 = heute. Zitate: Leitlinienname und AWMF-Registernummer nur dort, wo sie belastbar sind. Version und Empfehlungsnummer sind ueberall offen und werden in der App sichtbar als [offen] gerendert - es wurden KEINE Nummern erfunden. Vor der Jury-Demo durch die aerztlichen Fachexperten pruefen und ergaenzen lassen. Bilder gehoeren nach assets/daily/images/.",
+  "cases": [
+    {
+      "id": "forrest-iia-antrumulkus",
+      "imageAsset": "assets/daily/images/forrest_iia_antrumulkus.jpg",
+      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "region": "magen",
+      "topicId": "obere-gi-blutung",
+      "revealTitle": "Antrumulkus mit sichtbarem Gefäßstumpf — Forrest IIa",
+      "explanation": "Ösophagogastroduodenoskopie bei Hämatemesis vor sechs Stunden. An der kleinen Kurvatur im Antrum ein rund 15 mm messendes Ulkus mit fibrinbelegtem Grund. Zentral steht ein prominenter, nicht blutender Gefäßstumpf über das Niveau des Ulkusgrundes hinaus. Kein Frischblut, kein Koagel im Magen, keine sickernde Blutung unter Spülung.\n\nDamit liegt eine Läsion Forrest IIa vor. Entscheidend ist nicht, dass die Blutung steht, sondern dass ein Gefäß sichtbar ist: das Rezidivblutungsrisiko ist hier deutlich erhöht und rechtfertigt die endoskopische Intervention in derselben Sitzung. Nach der Hämostase folgt die hochdosierte PPI-Therapie, anschließend die Abklärung auf Helicobacter pylori sowie die Überprüfung der Indikation für NSAR und Thrombozytenaggregationshemmer.",
+      "citation": {
+        "guideline": "S2k-Leitlinie Gastrointestinale Blutung (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "strategie",
+        "question": "Welches Vorgehen ist bei diesem Befund indiziert?",
+        "correctOptionId": "b",
+        "takeaway": "Bei Forrest IIa behandelt man den sichtbaren Gefäßstumpf, nicht die Blutung. Dass es gerade nicht blutet, senkt das Rezidivrisiko nicht.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Keine endoskopische Therapie, alleinige PPI-Gabe und endoskopische Verlaufskontrolle",
+            "rationale": "Zu zurückhaltend. Der sichtbare Gefäßstumpf definiert eine Hochrisikoläsion; eine alleinige Säuresuppression lässt das Rezidivblutungsrisiko unbehandelt. Die PPI-Therapie ergänzt die Hämostase, sie ersetzt sie nicht."
+          },
+          {
+            "id": "b",
+            "label": "Endoskopische Kombinationstherapie, anschließend hochdosierte PPI-Therapie",
+            "rationale": "Richtig. Bei Forrest IIa ist die endoskopische Hämostase in derselben Sitzung indiziert, und zwar als Kombination aus Unterspritzung und einem zweiten Verfahren — mechanisch mittels Clip oder thermisch. Die Monotherapie mit Adrenalin allein ist unterlegen. Im Anschluss hochdosierte PPI-Therapie, danach H.-pylori-Diagnostik."
+          },
+          {
+            "id": "c",
+            "label": "Sofortige chirurgische Umstechung",
+            "rationale": "Falsch in der Reihenfolge. Die Chirurgie ist bei endoskopisch nicht beherrschbarer oder rezidivierender Blutung indiziert, nicht als Primärmaßnahme bei einer endoskopisch gut erreichbaren Läsion."
+          },
+          {
+            "id": "d",
+            "label": "Primär angiographische Embolisation",
+            "rationale": "Falsch in der Reihenfolge. Die interventionelle Radiologie ist eine Rückfalloption nach frustraner endoskopischer Hämostase, insbesondere beim chirurgischen Hochrisikopatienten — nicht der erste Schritt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "paris-iia-colon-ascendens",
+      "imageAsset": "assets/daily/images/paris_iia_colon_ascendens.jpg",
+      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "region": "kolon",
+      "topicId": "kolorektale-vorsorge",
+      "revealTitle": "Flach erhabene Läsion im Colon ascendens — Paris 0-IIa",
+      "explanation": "Vorsorgekoloskopie. Im Colon ascendens eine rund 18 mm messende Läsion, die sich flach über das umgebende Schleimhautniveau erhebt. Kein Stiel, keine Einziehung, keine Ulzeration. Unter Nahfokus und virtueller Chromoendoskopie regelrechtes, wenn auch verdichtetes Gefäß- und Grubenmuster ohne Areale mit Strukturverlust.\n\nDie morphologische Einordnung nach der Paris-Klassifikation erfolgt vor jeder Resektionsentscheidung, weil sie die Technik bestimmt: gestielte Läsionen werden anders angegangen als flach erhabene, und eine exkavierte Läsion verschiebt die Fragestellung von der Resektion zur Stadieneinteilung. Ergänzend wird die Oberflächenstruktur beurteilt, um Areale mit Verdacht auf tiefe submuköse Invasion zu erkennen — diese wären der Grund, nicht piecemeal zu resezieren.",
+      "citation": {
+        "guideline": "S3-Leitlinie Kolorektales Karzinom",
+        "register": "021-007OL",
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "befund",
+        "question": "Wie klassifizieren Sie diese Läsion morphologisch?",
+        "correctOptionId": "a",
+        "takeaway": "Die Paris-Klassifikation wird vor der Resektion vergeben, weil sie die Technik bestimmt — nicht danach, um den Befund zu beschreiben.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Paris 0-IIa, flach erhaben",
+            "rationale": "Richtig. Eine Erhabenheit unterhalb der Höhe einer geschlossenen Biopsiezange, ohne Stiel und ohne breite polypoide Basis, entspricht 0-IIa. Genau diese Morphologie führt bei dieser Größe zur Diskussion zwischen En-bloc- und Piecemeal-Resektion."
+          },
+          {
+            "id": "b",
+            "label": "Paris 0-Ip, gestielt polypoid",
+            "rationale": "Nicht vereinbar mit dem Bild. 0-Ip setzt einen erkennbaren Stiel voraus, an dem der Polypenkopf hängt. Hier fehlt der Stiel; die Läsion geht flach in die umgebende Schleimhaut über."
+          },
+          {
+            "id": "c",
+            "label": "Paris 0-III, exkaviert",
+            "rationale": "Nicht vereinbar mit dem Bild. 0-III bezeichnet eine echte Exkavation, also einen Substanzdefekt unter Schleimhautniveau. Beschrieben ist das Gegenteil, nämlich eine Erhabenheit."
+          },
+          {
+            "id": "d",
+            "label": "Subepitheliale Läsion mit intakter Schleimhaut",
+            "rationale": "Passt nicht zum Oberflächenbefund. Eine subepitheliale Läsion wölbt die darüberliegende, strukturell unauffällige Schleimhaut vor. Hier ist das Gruben- und Gefäßmuster der Oberfläche selbst verändert, die Läsion ist also epithelialen Ursprungs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesophagusvarizen-red-colour-signs",
+      "imageAsset": "assets/daily/images/oesophagusvarizen_red_colour_signs.jpg",
+      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "region": "oesophagus",
+      "topicId": "varizenblutung",
+      "revealTitle": "Ösophagusvarizen mit Red Colour Signs",
+      "explanation": "Patient mit bekannter äthyltoxischer Leberzirrhose, Aufnahme mit Hämatemesis und Meläna. Im distalen Ösophagus großkalibrige, konfluierende Varizenstränge, die sich mit Luftinsufflation nicht vollständig komprimieren lassen. Auf der Kuppe zweier Stränge längliche rote Zeichen im Sinne von Red Wale Marks.\n\nRed Colour Signs sind kein kosmetisches Detail, sondern der endoskopische Marker für ein hohes Blutungs- beziehungsweise Rezidivblutungsrisiko. Die akute Varizenblutung wird gleichzeitig auf drei Ebenen behandelt: endoskopische Ligatur als Verfahren der Wahl, vasoaktive Substanz zur Senkung des portalen Drucks, und Antibiotikaprophylaxe. Letztere wird im Alltag am häufigsten vergessen, obwohl sie sowohl die Infektionsrate als auch die Rezidivblutungsrate senkt.",
+      "citation": {
+        "guideline": "S2k-Leitlinie Komplikationen der Leberzirrhose (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "strategie",
+        "question": "Wie behandeln Sie diese akute Varizenblutung?",
+        "correctOptionId": "c",
+        "takeaway": "Ligatur, vasoaktive Substanz und Antibiotikaprophylaxe gehören zusammen. Die Antibiotikagabe ist Bestandteil der Standardtherapie, nicht eine Ermessensentscheidung.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Endoskopische Sklerosierung als Erstlinienverfahren",
+            "rationale": "Überholt. Die Sklerosierung ist der Ligatur bei Ösophagusvarizen hinsichtlich Komplikationen unterlegen und bleibt Situationen vorbehalten, in denen eine Ligatur technisch nicht durchführbar ist."
+          },
+          {
+            "id": "b",
+            "label": "Hochdosierte PPI-Therapie und Verlaufsendoskopie nach 24 Stunden",
+            "rationale": "Falsches Krankheitsmodell. Die Varizenblutung ist eine Folge der portalen Hypertension, nicht der Säure. Die PPI-Therapie behandelt hier nichts Ursächliches und ersetzt weder Ligatur noch vasoaktive Substanz."
+          },
+          {
+            "id": "c",
+            "label": "Endoskopische Ligatur, vasoaktive Substanz und Antibiotikaprophylaxe",
+            "rationale": "Richtig. Die drei Säulen greifen an unterschiedlichen Punkten an: die Ligatur an der blutenden Varize, die vasoaktive Substanz am portalen Druck, die Antibiotikaprophylaxe an der bakteriellen Translokation, die Rezidivblutung und Mortalität mit beeinflusst."
+          },
+          {
+            "id": "d",
+            "label": "Sofortige TIPS-Anlage bei allen Patienten mit Varizenblutung",
+            "rationale": "Zu weit gefasst. Der TIPS ist als Rescue-Verfahren bei nicht beherrschbarer Blutung etabliert und wird bei ausgewählten Hochrisikopatienten früh erwogen — aber nicht pauschal bei jeder Varizenblutung anstelle der endoskopischen Therapie."
+          }
+        ]
+      }
+    },
+    {
+      "id": "colitis-ulcerosa-mayo-3",
+      "imageAsset": "assets/daily/images/colitis_ulcerosa_mayo_3.jpg",
+      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "region": "kolon",
+      "topicId": "colitis-ulcerosa-aktivitaet",
+      "revealTitle": "Kontinuierliche Entzündung ab dem Rektum — Mayo 3",
+      "explanation": "Koloskopie bei blutigen Durchfällen seit drei Wochen. Ab der Linea dentata kontinuierlich aufsteigend eine diffus gerötete, ödematöse Schleimhaut mit vollständig aufgehobener Gefäßzeichnung. Bereits ohne Kontakt mit dem Endoskop spontane Blutung, dazu flache, fibrinbelegte Ulzerationen. Kein Wechsel zwischen befallenen und unbefallenen Abschnitten, keine aphthoiden Läsionen im terminalen Ileum.\n\nDas kontinuierliche, vom Rektum ausgehende Befallsmuster ohne Skip Lesions spricht für eine Colitis ulcerosa. Für die Aktivitätsbeurteilung ist der endoskopische Mayo-Subscore der etablierte Maßstab, weil er direkt in Therapieentscheidungen eingeht. Die endoskopische Beurteilung ersetzt dabei die Histologie nicht: Stufenbiopsien aus allen Segmenten gehören zur Erstdiagnostik und zur Abgrenzung gegenüber infektiöser Kolitis.",
+      "citation": {
+        "guideline": "S3-Leitlinie Colitis ulcerosa",
+        "register": "021-009",
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "befund",
+        "question": "Welchen endoskopischen Mayo-Subscore vergeben Sie?",
+        "correctOptionId": "d",
+        "takeaway": "Spontane Blutung und Ulzerationen definieren den endoskopischen Mayo-Subscore 3. Kontaktblutung allein reicht dafür nicht.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Mayo 1 — Rötung, verminderte Gefäßzeichnung, leichte Vulnerabilität",
+            "rationale": "Zu niedrig. Mayo 1 beschreibt eine milde Aktivität mit noch erhaltener, lediglich verminderter Gefäßzeichnung. Hier ist die Gefäßzeichnung vollständig aufgehoben und es liegen Ulzerationen vor."
+          },
+          {
+            "id": "b",
+            "label": "Mayo 2 — deutliche Rötung, fehlende Gefäßzeichnung, Kontaktblutung, Erosionen",
+            "rationale": "Knapp zu niedrig, und das ist der Fehler, der im Alltag am häufigsten passiert. Mayo 2 endet bei Kontaktblutung und Erosionen. Sobald spontane Blutung und echte Ulzerationen hinzukommen, ist der Score 3."
+          },
+          {
+            "id": "c",
+            "label": "Der Befall passt eher zu einem Morbus Crohn",
+            "rationale": "Nicht vereinbar mit dem Verteilungsmuster. Für einen Morbus Crohn spräche ein diskontinuierlicher Befall mit Skip Lesions, aphthoiden Läsionen und möglicher Ileumbeteiligung. Beschrieben ist ein kontinuierlicher, rektal beginnender Befall."
+          },
+          {
+            "id": "d",
+            "label": "Mayo 3 — spontane Blutung und Ulzerationen",
+            "rationale": "Richtig. Die spontane, also nicht durch Instrumentenkontakt ausgelöste Blutung zusammen mit Ulzerationen definiert die schwere endoskopische Aktivität. Der Score ist keine reine Dokumentation, er geht unmittelbar in die Eskalationsentscheidung ein."
+          }
+        ]
+      }
+    },
+    {
+      "id": "duodenum-scalloping-zoeliakie",
+      "imageAsset": "assets/daily/images/duodenum_scalloping_zoeliakie.jpg",
+      "imageCredit": { "source": "Lehrsammlung [offen]", "licence": "Platzhalter" },
+      "region": "duodenum",
+      "topicId": "zoeliakie-diagnostik",
+      "revealTitle": "Faltenverlust und Scalloping im Duodenum — Verdacht auf Zöliakie",
+      "explanation": "Ösophagogastroduodenoskopie bei seit Monaten bestehender Eisenmangelanämie, Meteorismus und Gewichtsabnahme. Im Bulbus und in der Pars descendens duodeni deutlich reduzierte Zahl und Höhe der Kerckring-Falten, der verbliebene Faltenrand ist gekerbt. Die Schleimhautoberfläche zeigt ein feines Mosaikmuster, unter Nahfokus stellenweise fehlende Zotten.\n\nFaltenverlust, Scalloping und Mosaikmuster sind für eine Zöliakie typisch, aber weder beweisend noch obligat — eine endoskopisch unauffällige Schleimhaut schließt die Erkrankung ausdrücklich nicht aus. Die Diagnose stützt sich auf die Serologie und auf Duodenalbiopsien, entnommen aus dem Bulbus und aus der Pars descendens. Entscheidend für die Verwertbarkeit beider Befunde ist, dass sie unter glutenhaltiger Kost erhoben werden.",
+      "citation": {
+        "guideline": "S2k-Leitlinie Zöliakie (DGVS)",
+        "register": null,
+        "version": null,
+        "recommendation": null
+      },
+      "unverified": true,
+      "quiz": {
+        "focus": "diagnose",
+        "question": "Welche Diagnose steht hier im Vordergrund?",
+        "correctOptionId": "b",
+        "takeaway": "Ein unauffälliges Duodenum schließt eine Zöliakie nicht aus. Serologie und Biopsien entscheiden — und beide nur unter glutenhaltiger Kost.",
+        "options": [
+          {
+            "id": "a",
+            "label": "Morbus Whipple",
+            "rationale": "Deutlich seltener und anders im Bild. Typisch wären weißlich-gelbliche, lymphangiektatische Beläge der Duodenalschleimhaut, meist bei ausgeprägter Systemsymptomatik mit Arthralgien. Faltenverlust und Scalloping sind nicht das Leitbild."
+          },
+          {
+            "id": "b",
+            "label": "Zöliakie",
+            "rationale": "Richtig als führender Verdacht. Die Kombination aus Faltenverlust, gekerbtem Faltenrand und Mosaikmuster passt zur Zottenatrophie, und die Klinik mit Eisenmangelanämie und Gewichtsabnahme stützt sie. Bestätigt wird der Verdacht durch Serologie und Duodenalbiopsien unter glutenhaltiger Kost, nicht durch das endoskopische Bild allein."
+          },
+          {
+            "id": "c",
+            "label": "Lambliasis",
+            "rationale": "Möglich als Differenzialdiagnose, aber nicht führend. Eine Giardiasis kann ein ähnliches Bild erzeugen und wird über Duodenalsekret oder Stuhldiagnostik gesichert — sie erklärt jedoch die Konstellation aus Eisenmangelanämie und chronischer Gewichtsabnahme seltener."
+          },
+          {
+            "id": "d",
+            "label": "Gastrointestinale Amyloidose",
+            "rationale": "Selten und meist nicht die erste Überlegung. Sie kann ebenfalls zu Malabsorption führen, wird aber histologisch mit Spezialfärbung gesichert und steht ohne Hinweis auf eine Grunderkrankung nicht am Anfang der Abklärung."
+          }
+        ]
+      }
+    }
+  ]
+}

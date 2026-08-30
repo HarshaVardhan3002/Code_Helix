@@ -1,0 +1,59 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.g.dart.lock
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+android/app/*.jks
+**/android/.gradle/
+
+# iOS / macOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/ephemeral/
+**/Flutter/ephemeral/
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+
+# Windows / Linux desktop
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+
+# Coverage
+coverage/
+lcov.info
+
+# Source dataset (2.4 GB, not redistributable through this repo).
+# Kvasir v2 lives in src/GI_dataset/ locally; only the selected, downscaled
+# frames under assets/daily/images/ are versioned.
+src/GI_dataset/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Upstream template demo media (inherited from
+# flutter_instagram_offline_first_clone). ~300 MB of .mov/.gif screen
+# recordings for Instagram screens this product does not ship.
+screenshots/
+packages/*/screenshots/
+packages/stories_editor/stories editor screenshots/
